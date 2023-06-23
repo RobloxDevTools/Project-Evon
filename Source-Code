@@ -1,4 +1,4 @@
--- Instances: 77 | Scripts: 14 | Modules: 0
+-- Instances: 134 | Scripts: 26 | Modules: 0
 local G2L = {};
 
 -- StarterGui.ProjectEvon
@@ -7,648 +7,1239 @@ G2L["1"]["Name"] = [[ProjectEvon]];
 
 -- StarterGui.ProjectEvon.DragNode
 G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["ZIndex"] = 999999999;
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 G2L["2"]["BackgroundTransparency"] = 1;
 G2L["2"]["Size"] = UDim2.new(0, 402, 0, 55);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2"]["Position"] = UDim2.new(0.1894409954547882, 0, 0.26081424951553345, 0);
+G2L["2"]["Position"] = UDim2.new(0.5, 0, 0.5, -100);
 G2L["2"]["Name"] = [[DragNode]];
 
+-- StarterGui.ProjectEvon.DragNode.DragManager
+G2L["3"] = Instance.new("LocalScript", G2L["2"]);
+G2L["3"]["Name"] = [[DragManager]];
+
+-- StarterGui.ProjectEvon.DragNode.FailedToggle
+G2L["4"] = Instance.new("LocalScript", G2L["2"]);
+G2L["4"]["Name"] = [[FailedToggle]];
+
 -- StarterGui.ProjectEvon.DragNode.MainUi
-G2L["3"] = Instance.new("Frame", G2L["2"]);
-G2L["3"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
-G2L["3"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["3"]["Size"] = UDim2.new(0, 400, 0, 300);
-G2L["3"]["ClipsDescendants"] = true;
-G2L["3"]["Position"] = UDim2.new(0.5, 0, 0.5, 125);
-G2L["3"]["Name"] = [[MainUi]];
+G2L["5"] = Instance.new("Frame", G2L["2"]);
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
+G2L["5"]["Size"] = UDim2.new(0, 400, 0, 300);
+G2L["5"]["ClipsDescendants"] = true;
+G2L["5"]["Name"] = [[MainUi]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.Logo
-G2L["4"] = Instance.new("Frame", G2L["3"]);
-G2L["4"]["ZIndex"] = 10;
-G2L["4"]["BackgroundColor3"] = Color3.fromRGB(122, 122, 122);
-G2L["4"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["4"]["BackgroundTransparency"] = 1;
-G2L["4"]["Size"] = UDim2.new(0, 50, 0, 50);
-G2L["4"]["Position"] = UDim2.new(0, 175, 0, 25);
-G2L["4"]["Name"] = [[Logo]];
+G2L["6"] = Instance.new("Frame", G2L["5"]);
+G2L["6"]["ZIndex"] = 10;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(122, 122, 122);
+G2L["6"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Size"] = UDim2.new(0, 50, 0, 50);
+G2L["6"]["Position"] = UDim2.new(0, 175, 0, 25);
+G2L["6"]["Name"] = [[Logo]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.Logo.LogoImage
-G2L["5"] = Instance.new("ImageLabel", G2L["4"]);
-G2L["5"]["ZIndex"] = 7;
-G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["5"]["ImageColor3"] = Color3.fromRGB(189, 189, 189);
-G2L["5"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["5"]["Image"] = [[http://www.roblox.com/asset/?id=13833833902]];
-G2L["5"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["5"]["Name"] = [[LogoImage]];
-G2L["5"]["BackgroundTransparency"] = 1;
-G2L["5"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
--- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Framework
-G2L["6"] = Instance.new("LocalScript", G2L["4"]);
-G2L["6"]["Name"] = [[Framework]];
-
--- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Clip
-G2L["7"] = Instance.new("Frame", G2L["4"]);
+G2L["7"] = Instance.new("ImageLabel", G2L["6"]);
 G2L["7"]["ZIndex"] = 7;
 G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["ImageColor3"] = Color3.fromRGB(189, 189, 189);
+G2L["7"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["7"]["Image"] = [[http://www.roblox.com/asset/?id=13833833902]];
+G2L["7"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["7"]["Name"] = [[LogoImage]];
 G2L["7"]["BackgroundTransparency"] = 1;
-G2L["7"]["Size"] = UDim2.new(0, 65, 0, 50);
-G2L["7"]["ClipsDescendants"] = true;
-G2L["7"]["Position"] = UDim2.new(1, 0, 0, 0);
-G2L["7"]["Name"] = [[Clip]];
+G2L["7"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
--- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Clip.TextFrame
-G2L["8"] = Instance.new("Frame", G2L["7"]);
-G2L["8"]["ZIndex"] = 7;
-G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["8"]["BackgroundTransparency"] = 1;
-G2L["8"]["Size"] = UDim2.new(0, 65, 0, 50);
-G2L["8"]["Name"] = [[TextFrame]];
+-- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Framework
+G2L["8"] = Instance.new("LocalScript", G2L["6"]);
+G2L["8"]["Name"] = [[Framework]];
 
--- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Clip.TextFrame.BottomText
-G2L["9"] = Instance.new("TextLabel", G2L["8"]);
+-- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Clip
+G2L["9"] = Instance.new("Frame", G2L["6"]);
 G2L["9"]["ZIndex"] = 7;
 G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["9"]["TextSize"] = 14;
-G2L["9"]["TextColor3"] = Color3.fromRGB(116, 116, 116);
-G2L["9"]["Size"] = UDim2.new(1, 0, 0, 12);
-G2L["9"]["Text"] = [[Evon]];
-G2L["9"]["Name"] = [[BottomText]];
 G2L["9"]["BackgroundTransparency"] = 1;
-G2L["9"]["Position"] = UDim2.new(0, 0, 0.5999999642372131, 0);
+G2L["9"]["Size"] = UDim2.new(0, 65, 0, 50);
+G2L["9"]["ClipsDescendants"] = true;
+G2L["9"]["Position"] = UDim2.new(1, 0, 0, 0);
+G2L["9"]["Name"] = [[Clip]];
 
--- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Clip.TextFrame.TopText
-G2L["a"] = Instance.new("TextLabel", G2L["8"]);
+-- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Clip.TextFrame
+G2L["a"] = Instance.new("Frame", G2L["9"]);
 G2L["a"]["ZIndex"] = 7;
 G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["a"]["TextSize"] = 20;
-G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a"]["Size"] = UDim2.new(1, 0, 0, 12);
-G2L["a"]["Text"] = [[Project]];
-G2L["a"]["Name"] = [[TopText]];
 G2L["a"]["BackgroundTransparency"] = 1;
-G2L["a"]["Position"] = UDim2.new(0, 0, 0.23999997973442078, 0);
+G2L["a"]["Size"] = UDim2.new(0, 65, 0, 50);
+G2L["a"]["Name"] = [[TextFrame]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Clip.TextFrame.BottomText
+G2L["b"] = Instance.new("TextLabel", G2L["a"]);
+G2L["b"]["ZIndex"] = 7;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b"]["TextSize"] = 14;
+G2L["b"]["TextColor3"] = Color3.fromRGB(116, 116, 116);
+G2L["b"]["Size"] = UDim2.new(1, 0, 0, 12);
+G2L["b"]["Text"] = [[Evon]];
+G2L["b"]["Name"] = [[BottomText]];
+G2L["b"]["BackgroundTransparency"] = 1;
+G2L["b"]["Position"] = UDim2.new(0, 0, 0.5999999642372131, 0);
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Clip.TextFrame.TopText
+G2L["c"] = Instance.new("TextLabel", G2L["a"]);
+G2L["c"]["ZIndex"] = 7;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["c"]["TextSize"] = 20;
+G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["Size"] = UDim2.new(1, 0, 0, 12);
+G2L["c"]["Text"] = [[Project]];
+G2L["c"]["Name"] = [[TopText]];
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["Position"] = UDim2.new(0, 0, 0.23999997973442078, 0);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.Logo.ImageLabel
-G2L["b"] = Instance.new("ImageLabel", G2L["4"]);
-G2L["b"]["ZIndex"] = 7;
-G2L["b"]["BorderSizePixel"] = 0;
-G2L["b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
-G2L["b"]["Size"] = UDim2.new(0, 50, 0, 50);
-G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b"]["BackgroundTransparency"] = 1;
-G2L["b"]["Position"] = UDim2.new(0, -150, 0, 190);
+G2L["d"] = Instance.new("ImageLabel", G2L["6"]);
+G2L["d"]["ZIndex"] = 7;
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["d"]["Size"] = UDim2.new(0, 50, 0, 50);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["BackgroundTransparency"] = 1;
+G2L["d"]["Position"] = UDim2.new(0, -150, 0, 190);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.Logo.ImageLabel.PFPManager
-G2L["c"] = Instance.new("LocalScript", G2L["b"]);
-G2L["c"]["Name"] = [[PFPManager]];
+G2L["e"] = Instance.new("LocalScript", G2L["d"]);
+G2L["e"]["Name"] = [[PFPManager]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.Executor
-G2L["d"] = Instance.new("TextLabel", G2L["3"]);
-G2L["d"]["TextWrapped"] = true;
-G2L["d"]["ZIndex"] = 2;
-G2L["d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["d"]["TextSize"] = 15;
-G2L["d"]["TextColor3"] = Color3.fromRGB(140, 140, 140);
-G2L["d"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["d"]["Text"] = [[<executor>]];
-G2L["d"]["Name"] = [[Executor]];
-G2L["d"]["BackgroundTransparency"] = 1;
-G2L["d"]["Position"] = UDim2.new(0.5, 0, -7.450580596923828e-08, 0);
+G2L["f"] = Instance.new("TextLabel", G2L["5"]);
+G2L["f"]["TextWrapped"] = true;
+G2L["f"]["ZIndex"] = 999999999;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["f"]["TextSize"] = 15;
+G2L["f"]["TextColor3"] = Color3.fromRGB(140, 140, 140);
+G2L["f"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["f"]["Text"] = [[<executor>]];
+G2L["f"]["Name"] = [[Executor]];
+G2L["f"]["BackgroundTransparency"] = 1;
+G2L["f"]["Position"] = UDim2.new(0.5, 0, -7.450580596923828e-08, 0);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.Executor.ExecutorDetector
-G2L["e"] = Instance.new("LocalScript", G2L["d"]);
-G2L["e"]["Name"] = [[ExecutorDetector]];
+G2L["10"] = Instance.new("LocalScript", G2L["f"]);
+G2L["10"]["Name"] = [[ExecutorDetector]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.Executor.UIPadding
-G2L["f"] = Instance.new("UIPadding", G2L["d"]);
-G2L["f"]["PaddingRight"] = UDim.new(0, 15);
-G2L["f"]["PaddingLeft"] = UDim.new(0, 25);
+G2L["11"] = Instance.new("UIPadding", G2L["f"]);
+G2L["11"]["PaddingRight"] = UDim.new(0, 15);
+G2L["11"]["PaddingLeft"] = UDim.new(0, 25);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.TopVerify
-G2L["10"] = Instance.new("TextLabel", G2L["3"]);
-G2L["10"]["ZIndex"] = 2;
-G2L["10"]["RichText"] = true;
-G2L["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["10"]["TextSize"] = 30;
-G2L["10"]["TextColor3"] = Color3.fromRGB(255, 171, 0);
-G2L["10"]["Size"] = UDim2.new(0, 304, 0, 82);
-G2L["10"]["Text"] = [[Are You ------?]];
-G2L["10"]["Name"] = [[TopVerify]];
-G2L["10"]["BackgroundTransparency"] = 1;
-G2L["10"]["Position"] = UDim2.new(0, 50, 0, 50);
-
--- StarterGui.ProjectEvon.DragNode.MainUi.TopVerify.UserVerifyDisplayManager
-G2L["11"] = Instance.new("LocalScript", G2L["10"]);
-G2L["11"]["Name"] = [[UserVerifyDisplayManager]];
-
--- StarterGui.ProjectEvon.DragNode.MainUi.BottomVerify
-G2L["12"] = Instance.new("TextLabel", G2L["3"]);
-G2L["12"]["TextWrapped"] = true;
+G2L["12"] = Instance.new("TextLabel", G2L["5"]);
 G2L["12"]["ZIndex"] = 2;
 G2L["12"]["RichText"] = true;
 G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["12"]["TextSize"] = 20;
-G2L["12"]["TextColor3"] = Color3.fromRGB(127, 127, 127);
+G2L["12"]["TextSize"] = 30;
+G2L["12"]["TextColor3"] = Color3.fromRGB(255, 171, 0);
 G2L["12"]["Size"] = UDim2.new(0, 304, 0, 82);
-G2L["12"]["Text"] = [[------ Is Trying To Use Project Evon On Your Account.]];
-G2L["12"]["Name"] = [[BottomVerify]];
+G2L["12"]["Text"] = [[Are You ------?]];
+G2L["12"]["Name"] = [[TopVerify]];
 G2L["12"]["BackgroundTransparency"] = 1;
-G2L["12"]["Position"] = UDim2.new(0, 50, 0, 135);
+G2L["12"]["Position"] = UDim2.new(0, 50, 0, 50);
 
--- StarterGui.ProjectEvon.DragNode.MainUi.BottomVerify.UserVerifyDisplayManager
+-- StarterGui.ProjectEvon.DragNode.MainUi.TopVerify.UserVerifyDisplayManager
 G2L["13"] = Instance.new("LocalScript", G2L["12"]);
 G2L["13"]["Name"] = [[UserVerifyDisplayManager]];
 
--- StarterGui.ProjectEvon.DragNode.MainUi.ImageLabel
-G2L["14"] = Instance.new("ImageLabel", G2L["3"]);
+-- StarterGui.ProjectEvon.DragNode.MainUi.BottomVerify
+G2L["14"] = Instance.new("TextLabel", G2L["5"]);
+G2L["14"]["TextWrapped"] = true;
+G2L["14"]["ZIndex"] = 2;
+G2L["14"]["RichText"] = true;
 G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["14"]["ImageColor3"] = Color3.fromRGB(36, 37, 40);
-G2L["14"]["Image"] = [[http://www.roblox.com/asset/?id=13834472667]];
-G2L["14"]["Size"] = UDim2.new(0, 400, 0, 300);
+G2L["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["14"]["TextSize"] = 20;
+G2L["14"]["TextColor3"] = Color3.fromRGB(127, 127, 127);
+G2L["14"]["Size"] = UDim2.new(0, 304, 0, 82);
+G2L["14"]["Text"] = [[------ Is Trying To Use Project Evon On Your Account.]];
+G2L["14"]["Name"] = [[BottomVerify]];
 G2L["14"]["BackgroundTransparency"] = 1;
+G2L["14"]["Position"] = UDim2.new(0, 50, 0, 135);
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.BottomVerify.UserVerifyDisplayManager
+G2L["15"] = Instance.new("LocalScript", G2L["14"]);
+G2L["15"]["Name"] = [[UserVerifyDisplayManager]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.ImageLabel
+G2L["16"] = Instance.new("ImageLabel", G2L["5"]);
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["ImageColor3"] = Color3.fromRGB(36, 37, 40);
+G2L["16"]["Image"] = [[http://www.roblox.com/asset/?id=13834472667]];
+G2L["16"]["Size"] = UDim2.new(0, 400, 0, 300);
+G2L["16"]["BackgroundTransparency"] = 1;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame
-G2L["15"] = Instance.new("Frame", G2L["3"]);
-G2L["15"]["BorderSizePixel"] = 0;
-G2L["15"]["BackgroundColor3"] = Color3.fromRGB(30, 32, 34);
-G2L["15"]["Size"] = UDim2.new(0, 400, 0, 60);
-G2L["15"]["ClipsDescendants"] = true;
-G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15"]["Position"] = UDim2.new(0, 0, 0, 240);
-G2L["15"]["Name"] = [[ButtonsFrame]];
+G2L["17"] = Instance.new("Frame", G2L["5"]);
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(30, 32, 34);
+G2L["17"]["Size"] = UDim2.new(0, 400, 0, 60);
+G2L["17"]["ClipsDescendants"] = true;
+G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["Position"] = UDim2.new(0, 0, 0, 240);
+G2L["17"]["Name"] = [[ButtonsFrame]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons
-G2L["16"] = Instance.new("Frame", G2L["15"]);
-G2L["16"]["BorderSizePixel"] = 0;
-G2L["16"]["BackgroundColor3"] = Color3.fromRGB(30, 32, 34);
-G2L["16"]["Size"] = UDim2.new(0, 400, 0, 60);
-G2L["16"]["Name"] = [[Buttons]];
+G2L["18"] = Instance.new("Frame", G2L["17"]);
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(30, 32, 34);
+G2L["18"]["Size"] = UDim2.new(0, 400, 0, 60);
+G2L["18"]["Name"] = [[Buttons]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.Yes
-G2L["17"] = Instance.new("Frame", G2L["16"]);
-G2L["17"]["ZIndex"] = 0;
-G2L["17"]["BorderSizePixel"] = 0;
-G2L["17"]["BackgroundTransparency"] = 1;
-G2L["17"]["Size"] = UDim2.new(0, 153, 0, 38);
-G2L["17"]["Position"] = UDim2.new(0.5429999828338623, 0, 0.17900000512599945, 0);
-G2L["17"]["Name"] = [[Yes]];
+G2L["19"] = Instance.new("Frame", G2L["18"]);
+G2L["19"]["ZIndex"] = 0;
+G2L["19"]["BorderSizePixel"] = 0;
+G2L["19"]["BackgroundTransparency"] = 1;
+G2L["19"]["Size"] = UDim2.new(0, 153, 0, 38);
+G2L["19"]["Position"] = UDim2.new(0.5429999828338623, 0, 0.17900000512599945, 0);
+G2L["19"]["Name"] = [[Yes]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.Yes.DropShadow
-G2L["18"] = Instance.new("ImageLabel", G2L["17"]);
-G2L["18"]["ZIndex"] = 0;
-G2L["18"]["BorderSizePixel"] = 0;
-G2L["18"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["18"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["18"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["18"]["ImageTransparency"] = 0.5;
-G2L["18"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["18"]["Image"] = [[rbxassetid://6014261993]];
-G2L["18"]["Size"] = UDim2.new(1, 47, 1, 47);
-G2L["18"]["Name"] = [[DropShadow]];
-G2L["18"]["BackgroundTransparency"] = 1;
-G2L["18"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["1a"] = Instance.new("ImageLabel", G2L["19"]);
+G2L["1a"]["ZIndex"] = 0;
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
+G2L["1a"]["ScaleType"] = Enum.ScaleType.Slice;
+G2L["1a"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["ImageTransparency"] = 0.5;
+G2L["1a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["1a"]["Image"] = [[rbxassetid://6014261993]];
+G2L["1a"]["Size"] = UDim2.new(1, 47, 1, 47);
+G2L["1a"]["Name"] = [[DropShadow]];
+G2L["1a"]["BackgroundTransparency"] = 1;
+G2L["1a"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.Yes.YesButton
-G2L["19"] = Instance.new("TextButton", G2L["17"]);
-G2L["19"]["TextWrapped"] = true;
-G2L["19"]["TextStrokeColor3"] = Color3.fromRGB(29, 31, 33);
-G2L["19"]["TextScaled"] = true;
-G2L["19"]["BackgroundColor3"] = Color3.fromRGB(21, 203, 0);
-G2L["19"]["TextSize"] = 14;
-G2L["19"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["19"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["19"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["19"]["Name"] = [[YesButton]];
-G2L["19"]["Text"] = [[Yes, This Is Me.]];
+G2L["1b"] = Instance.new("TextButton", G2L["19"]);
+G2L["1b"]["TextWrapped"] = true;
+G2L["1b"]["TextStrokeColor3"] = Color3.fromRGB(29, 31, 33);
+G2L["1b"]["TextScaled"] = true;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(21, 203, 0);
+G2L["1b"]["TextSize"] = 14;
+G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["1b"]["Name"] = [[YesButton]];
+G2L["1b"]["Text"] = [[Yes, This Is Me.]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.Yes.YesButton.UICorner
-G2L["1a"] = Instance.new("UICorner", G2L["19"]);
-G2L["1a"]["CornerRadius"] = UDim.new(0, 3);
+G2L["1c"] = Instance.new("UICorner", G2L["1b"]);
+G2L["1c"]["CornerRadius"] = UDim.new(0, 3);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.Yes.YesButton.UIStroke
-G2L["1b"] = Instance.new("UIStroke", G2L["19"]);
-G2L["1b"]["Thickness"] = 0.5;
+G2L["1d"] = Instance.new("UIStroke", G2L["1b"]);
+G2L["1d"]["Thickness"] = 0.5;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.Yes.YesButton.UIPadding
-G2L["1c"] = Instance.new("UIPadding", G2L["19"]);
-G2L["1c"]["PaddingRight"] = UDim.new(0, 10);
-G2L["1c"]["PaddingLeft"] = UDim.new(0, 10);
+G2L["1e"] = Instance.new("UIPadding", G2L["1b"]);
+G2L["1e"]["PaddingRight"] = UDim.new(0, 10);
+G2L["1e"]["PaddingLeft"] = UDim.new(0, 10);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.Yes.YesButton.ClickDetector
-G2L["1d"] = Instance.new("LocalScript", G2L["19"]);
-G2L["1d"]["Name"] = [[ClickDetector]];
+G2L["1f"] = Instance.new("LocalScript", G2L["1b"]);
+G2L["1f"]["Name"] = [[ClickDetector]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.No
-G2L["1e"] = Instance.new("Frame", G2L["16"]);
-G2L["1e"]["ZIndex"] = 0;
-G2L["1e"]["BorderSizePixel"] = 0;
-G2L["1e"]["BackgroundTransparency"] = 1;
-G2L["1e"]["Size"] = UDim2.new(0, 153, 0, 38);
-G2L["1e"]["Position"] = UDim2.new(0.07500000298023224, 0, 0.17900000512599945, 0);
-G2L["1e"]["Name"] = [[No]];
+G2L["20"] = Instance.new("Frame", G2L["18"]);
+G2L["20"]["ZIndex"] = 0;
+G2L["20"]["BorderSizePixel"] = 0;
+G2L["20"]["BackgroundTransparency"] = 1;
+G2L["20"]["Size"] = UDim2.new(0, 153, 0, 38);
+G2L["20"]["Position"] = UDim2.new(0.07500000298023224, 0, 0.17900000512599945, 0);
+G2L["20"]["Name"] = [[No]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.No.DropShadow
-G2L["1f"] = Instance.new("ImageLabel", G2L["1e"]);
-G2L["1f"]["ZIndex"] = 0;
-G2L["1f"]["BorderSizePixel"] = 0;
-G2L["1f"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["1f"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["1f"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1f"]["ImageTransparency"] = 0.5;
-G2L["1f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1f"]["Image"] = [[rbxassetid://6014261993]];
-G2L["1f"]["Size"] = UDim2.new(1, 47, 1, 47);
-G2L["1f"]["Name"] = [[DropShadow]];
-G2L["1f"]["BackgroundTransparency"] = 1;
-G2L["1f"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["21"] = Instance.new("ImageLabel", G2L["20"]);
+G2L["21"]["ZIndex"] = 0;
+G2L["21"]["BorderSizePixel"] = 0;
+G2L["21"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
+G2L["21"]["ScaleType"] = Enum.ScaleType.Slice;
+G2L["21"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["ImageTransparency"] = 0.5;
+G2L["21"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["21"]["Image"] = [[rbxassetid://6014261993]];
+G2L["21"]["Size"] = UDim2.new(1, 47, 1, 47);
+G2L["21"]["Name"] = [[DropShadow]];
+G2L["21"]["BackgroundTransparency"] = 1;
+G2L["21"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.No.NoButton
-G2L["20"] = Instance.new("TextButton", G2L["1e"]);
-G2L["20"]["TextWrapped"] = true;
-G2L["20"]["TextStrokeColor3"] = Color3.fromRGB(29, 31, 33);
-G2L["20"]["BackgroundColor3"] = Color3.fromRGB(105, 105, 105);
-G2L["20"]["TextSize"] = 25;
-G2L["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["20"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["20"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["20"]["Name"] = [[NoButton]];
-G2L["20"]["Text"] = [[No, It's Not.]];
+G2L["22"] = Instance.new("TextButton", G2L["20"]);
+G2L["22"]["TextWrapped"] = true;
+G2L["22"]["TextStrokeColor3"] = Color3.fromRGB(29, 31, 33);
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(105, 105, 105);
+G2L["22"]["TextSize"] = 25;
+G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["22"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["22"]["Name"] = [[NoButton]];
+G2L["22"]["Text"] = [[No, It's Not.]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.No.NoButton.UICorner
-G2L["21"] = Instance.new("UICorner", G2L["20"]);
-G2L["21"]["CornerRadius"] = UDim.new(0, 3);
+G2L["23"] = Instance.new("UICorner", G2L["22"]);
+G2L["23"]["CornerRadius"] = UDim.new(0, 3);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.No.NoButton.UIStroke
-G2L["22"] = Instance.new("UIStroke", G2L["20"]);
-G2L["22"]["Thickness"] = 0.5;
+G2L["24"] = Instance.new("UIStroke", G2L["22"]);
+G2L["24"]["Thickness"] = 0.5;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.No.NoButton.UIPadding
-G2L["23"] = Instance.new("UIPadding", G2L["20"]);
-G2L["23"]["PaddingRight"] = UDim.new(0, 10);
-G2L["23"]["PaddingLeft"] = UDim.new(0, 10);
+G2L["25"] = Instance.new("UIPadding", G2L["22"]);
+G2L["25"]["PaddingRight"] = UDim.new(0, 10);
+G2L["25"]["PaddingLeft"] = UDim.new(0, 10);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.No.NoButton.ClickDetector
-G2L["24"] = Instance.new("LocalScript", G2L["20"]);
-G2L["24"]["Name"] = [[ClickDetector]];
+G2L["26"] = Instance.new("LocalScript", G2L["22"]);
+G2L["26"]["Name"] = [[ClickDetector]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame
-G2L["25"] = Instance.new("Frame", G2L["15"]);
-G2L["25"]["BorderSizePixel"] = 0;
-G2L["25"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["25"]["BackgroundTransparency"] = 1;
-G2L["25"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["25"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["25"]["Position"] = UDim2.new(0, 400, 0, 0);
-G2L["25"]["Name"] = [[ConfirmFrame]];
+G2L["27"] = Instance.new("Frame", G2L["17"]);
+G2L["27"]["BorderSizePixel"] = 0;
+G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["27"]["BackgroundTransparency"] = 1;
+G2L["27"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["27"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["27"]["Position"] = UDim2.new(0, 400, 0, 0);
+G2L["27"]["Name"] = [[ConfirmFrame]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.No
-G2L["26"] = Instance.new("Frame", G2L["25"]);
-G2L["26"]["ZIndex"] = 0;
-G2L["26"]["BorderSizePixel"] = 0;
-G2L["26"]["BackgroundTransparency"] = 1;
-G2L["26"]["Size"] = UDim2.new(0, 153, 0, 38);
-G2L["26"]["Position"] = UDim2.new(0.07500000298023224, 0, 0.17900000512599945, 0);
-G2L["26"]["Name"] = [[No]];
+G2L["28"] = Instance.new("Frame", G2L["27"]);
+G2L["28"]["ZIndex"] = 0;
+G2L["28"]["BorderSizePixel"] = 0;
+G2L["28"]["BackgroundTransparency"] = 1;
+G2L["28"]["Size"] = UDim2.new(0, 153, 0, 38);
+G2L["28"]["Position"] = UDim2.new(0.07500000298023224, 0, 0.17900000512599945, 0);
+G2L["28"]["Name"] = [[No]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.No.DropShadow
-G2L["27"] = Instance.new("ImageLabel", G2L["26"]);
-G2L["27"]["ZIndex"] = 0;
-G2L["27"]["BorderSizePixel"] = 0;
-G2L["27"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["27"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["27"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["27"]["ImageTransparency"] = 0.5;
-G2L["27"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["27"]["Image"] = [[rbxassetid://6014261993]];
-G2L["27"]["Size"] = UDim2.new(1, 47, 1, 47);
-G2L["27"]["Name"] = [[DropShadow]];
-G2L["27"]["BackgroundTransparency"] = 1;
-G2L["27"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["29"] = Instance.new("ImageLabel", G2L["28"]);
+G2L["29"]["ZIndex"] = 0;
+G2L["29"]["BorderSizePixel"] = 0;
+G2L["29"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
+G2L["29"]["ScaleType"] = Enum.ScaleType.Slice;
+G2L["29"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["ImageTransparency"] = 0.5;
+G2L["29"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["29"]["Image"] = [[rbxassetid://6014261993]];
+G2L["29"]["Size"] = UDim2.new(1, 47, 1, 47);
+G2L["29"]["Name"] = [[DropShadow]];
+G2L["29"]["BackgroundTransparency"] = 1;
+G2L["29"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.No.NoButton
-G2L["28"] = Instance.new("TextButton", G2L["26"]);
-G2L["28"]["TextWrapped"] = true;
-G2L["28"]["TextStrokeColor3"] = Color3.fromRGB(29, 31, 33);
-G2L["28"]["BackgroundColor3"] = Color3.fromRGB(105, 105, 105);
-G2L["28"]["TextSize"] = 25;
-G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["28"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["28"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["28"]["Name"] = [[NoButton]];
-G2L["28"]["Text"] = [[Cancel.]];
+G2L["2a"] = Instance.new("TextButton", G2L["28"]);
+G2L["2a"]["TextWrapped"] = true;
+G2L["2a"]["TextStrokeColor3"] = Color3.fromRGB(29, 31, 33);
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(105, 105, 105);
+G2L["2a"]["TextSize"] = 25;
+G2L["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["2a"]["Name"] = [[NoButton]];
+G2L["2a"]["Text"] = [[Cancel.]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.No.NoButton.UICorner
-G2L["29"] = Instance.new("UICorner", G2L["28"]);
-G2L["29"]["CornerRadius"] = UDim.new(0, 3);
+G2L["2b"] = Instance.new("UICorner", G2L["2a"]);
+G2L["2b"]["CornerRadius"] = UDim.new(0, 3);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.No.NoButton.UIStroke
-G2L["2a"] = Instance.new("UIStroke", G2L["28"]);
-G2L["2a"]["Thickness"] = 0.5;
+G2L["2c"] = Instance.new("UIStroke", G2L["2a"]);
+G2L["2c"]["Thickness"] = 0.5;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.No.NoButton.UIPadding
-G2L["2b"] = Instance.new("UIPadding", G2L["28"]);
-G2L["2b"]["PaddingRight"] = UDim.new(0, 10);
-G2L["2b"]["PaddingLeft"] = UDim.new(0, 10);
+G2L["2d"] = Instance.new("UIPadding", G2L["2a"]);
+G2L["2d"]["PaddingRight"] = UDim.new(0, 10);
+G2L["2d"]["PaddingLeft"] = UDim.new(0, 10);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.No.NoButton.ClickDetector
-G2L["2c"] = Instance.new("LocalScript", G2L["28"]);
-G2L["2c"]["Name"] = [[ClickDetector]];
+G2L["2e"] = Instance.new("LocalScript", G2L["2a"]);
+G2L["2e"]["Name"] = [[ClickDetector]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.Yes
-G2L["2d"] = Instance.new("Frame", G2L["25"]);
-G2L["2d"]["ZIndex"] = 0;
-G2L["2d"]["BorderSizePixel"] = 0;
-G2L["2d"]["BackgroundTransparency"] = 1;
-G2L["2d"]["Size"] = UDim2.new(0, 153, 0, 38);
-G2L["2d"]["Position"] = UDim2.new(0.5429999828338623, 0, 0.17900000512599945, 0);
-G2L["2d"]["Name"] = [[Yes]];
+G2L["2f"] = Instance.new("Frame", G2L["27"]);
+G2L["2f"]["ZIndex"] = 0;
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["BackgroundTransparency"] = 1;
+G2L["2f"]["Size"] = UDim2.new(0, 153, 0, 38);
+G2L["2f"]["Position"] = UDim2.new(0.5429999828338623, 0, 0.17900000512599945, 0);
+G2L["2f"]["Name"] = [[Yes]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.Yes.DropShadow
-G2L["2e"] = Instance.new("ImageLabel", G2L["2d"]);
-G2L["2e"]["ZIndex"] = 0;
-G2L["2e"]["BorderSizePixel"] = 0;
-G2L["2e"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["2e"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["2e"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2e"]["ImageTransparency"] = 0.5;
-G2L["2e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["2e"]["Image"] = [[rbxassetid://6014261993]];
-G2L["2e"]["Size"] = UDim2.new(1, 47, 1, 47);
-G2L["2e"]["Name"] = [[DropShadow]];
-G2L["2e"]["BackgroundTransparency"] = 1;
-G2L["2e"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["30"] = Instance.new("ImageLabel", G2L["2f"]);
+G2L["30"]["ZIndex"] = 0;
+G2L["30"]["BorderSizePixel"] = 0;
+G2L["30"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
+G2L["30"]["ScaleType"] = Enum.ScaleType.Slice;
+G2L["30"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["ImageTransparency"] = 0.5;
+G2L["30"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["30"]["Image"] = [[rbxassetid://6014261993]];
+G2L["30"]["Size"] = UDim2.new(1, 47, 1, 47);
+G2L["30"]["Name"] = [[DropShadow]];
+G2L["30"]["BackgroundTransparency"] = 1;
+G2L["30"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.Yes.YesButton
-G2L["2f"] = Instance.new("TextButton", G2L["2d"]);
-G2L["2f"]["TextWrapped"] = true;
-G2L["2f"]["TextStrokeColor3"] = Color3.fromRGB(29, 31, 33);
-G2L["2f"]["TextScaled"] = true;
-G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(21, 203, 0);
-G2L["2f"]["TextSize"] = 14;
-G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["2f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2f"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["2f"]["Name"] = [[YesButton]];
-G2L["2f"]["Text"] = [[Load.]];
+G2L["31"] = Instance.new("TextButton", G2L["2f"]);
+G2L["31"]["TextWrapped"] = true;
+G2L["31"]["TextStrokeColor3"] = Color3.fromRGB(29, 31, 33);
+G2L["31"]["TextScaled"] = true;
+G2L["31"]["BackgroundColor3"] = Color3.fromRGB(21, 203, 0);
+G2L["31"]["TextSize"] = 14;
+G2L["31"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["31"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["31"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["31"]["Name"] = [[YesButton]];
+G2L["31"]["Text"] = [[Load.]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.Yes.YesButton.UICorner
-G2L["30"] = Instance.new("UICorner", G2L["2f"]);
-G2L["30"]["CornerRadius"] = UDim.new(0, 3);
+G2L["32"] = Instance.new("UICorner", G2L["31"]);
+G2L["32"]["CornerRadius"] = UDim.new(0, 3);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.Yes.YesButton.UIStroke
-G2L["31"] = Instance.new("UIStroke", G2L["2f"]);
-G2L["31"]["Thickness"] = 0.5;
+G2L["33"] = Instance.new("UIStroke", G2L["31"]);
+G2L["33"]["Thickness"] = 0.5;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.Yes.YesButton.UIPadding
-G2L["32"] = Instance.new("UIPadding", G2L["2f"]);
-G2L["32"]["PaddingRight"] = UDim.new(0, 10);
-G2L["32"]["PaddingLeft"] = UDim.new(0, 10);
+G2L["34"] = Instance.new("UIPadding", G2L["31"]);
+G2L["34"]["PaddingRight"] = UDim.new(0, 10);
+G2L["34"]["PaddingLeft"] = UDim.new(0, 10);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.Yes.YesButton.ClickDetector
-G2L["33"] = Instance.new("LocalScript", G2L["2f"]);
-G2L["33"]["Name"] = [[ClickDetector]];
+G2L["35"] = Instance.new("LocalScript", G2L["31"]);
+G2L["35"]["Name"] = [[ClickDetector]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI
-G2L["34"] = Instance.new("Frame", G2L["3"]);
-G2L["34"]["ZIndex"] = 4;
-G2L["34"]["BorderSizePixel"] = 0;
-G2L["34"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
-G2L["34"]["Size"] = UDim2.new(0, 400, 0, 300);
-G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["34"]["Visible"] = false;
-G2L["34"]["Name"] = [[MainFrameUI]];
+G2L["36"] = Instance.new("Frame", G2L["5"]);
+G2L["36"]["ZIndex"] = 4;
+G2L["36"]["BorderSizePixel"] = 0;
+G2L["36"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
+G2L["36"]["Size"] = UDim2.new(0, 400, 0, 300);
+G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["Visible"] = false;
+G2L["36"]["Name"] = [[MainFrameUI]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.BG
-G2L["35"] = Instance.new("ImageLabel", G2L["34"]);
-G2L["35"]["ZIndex"] = 6;
-G2L["35"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["35"]["ImageColor3"] = Color3.fromRGB(36, 37, 40);
-G2L["35"]["Image"] = [[http://www.roblox.com/asset/?id=13834472667]];
-G2L["35"]["Size"] = UDim2.new(0, 400, 0, 300);
-G2L["35"]["Name"] = [[BG]];
-G2L["35"]["BackgroundTransparency"] = 1;
-
--- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.CopyRightFrame
-G2L["36"] = Instance.new("Frame", G2L["34"]);
-G2L["36"]["ZIndex"] = 6;
-G2L["36"]["BorderSizePixel"] = 0;
-G2L["36"]["BackgroundColor3"] = Color3.fromRGB(30, 32, 34);
-G2L["36"]["Size"] = UDim2.new(0, 400, 0, 60);
-G2L["36"]["ClipsDescendants"] = true;
-G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["36"]["Position"] = UDim2.new(0, 0, 0, 240);
-G2L["36"]["Name"] = [[CopyRightFrame]];
-
--- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.CopyRightFrame.CopyRight
-G2L["37"] = Instance.new("TextLabel", G2L["36"]);
+G2L["37"] = Instance.new("ImageLabel", G2L["36"]);
 G2L["37"]["ZIndex"] = 6;
-G2L["37"]["BorderSizePixel"] = 0;
 G2L["37"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["37"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["37"]["TextSize"] = 22;
-G2L["37"]["TextColor3"] = Color3.fromRGB(96, 96, 96);
-G2L["37"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["37"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["37"]["Text"] = [[© 2023, Project Evon. All Rights Reserved.]];
-G2L["37"]["Name"] = [[CopyRight]];
+G2L["37"]["ImageColor3"] = Color3.fromRGB(36, 37, 40);
+G2L["37"]["Image"] = [[http://www.roblox.com/asset/?id=13834472667]];
+G2L["37"]["Size"] = UDim2.new(0, 400, 0, 300);
+G2L["37"]["Name"] = [[BG]];
 G2L["37"]["BackgroundTransparency"] = 1;
 
--- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs
-G2L["38"] = Instance.new("ScrollingFrame", G2L["34"]);
-G2L["38"]["Active"] = true;
-G2L["38"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
-G2L["38"]["SizeConstraint"] = Enum.SizeConstraint.RelativeYY;
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.CopyRightFrame
+G2L["38"] = Instance.new("Frame", G2L["36"]);
 G2L["38"]["ZIndex"] = 6;
 G2L["38"]["BorderSizePixel"] = 0;
-G2L["38"]["CanvasSize"] = UDim2.new(1, 0, 1, 0);
-G2L["38"]["CanvasPosition"] = Vector2.new(0, 5.2173919677734375);
-G2L["38"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-G2L["38"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
-G2L["38"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["38"]["BackgroundTransparency"] = 0.5;
-G2L["38"]["Size"] = UDim2.new(0, 100, 0, 115);
+G2L["38"]["BackgroundColor3"] = Color3.fromRGB(30, 32, 34);
+G2L["38"]["Size"] = UDim2.new(0, 400, 0, 60);
+G2L["38"]["ClipsDescendants"] = true;
 G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["38"]["Position"] = UDim2.new(0, 0, 0, 75);
-G2L["38"]["Name"] = [[Tabs]];
+G2L["38"]["Position"] = UDim2.new(0, 0, 0, 240);
+G2L["38"]["Name"] = [[CopyRightFrame]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.CopyRightFrame.CopyRight
+G2L["39"] = Instance.new("TextLabel", G2L["38"]);
+G2L["39"]["ZIndex"] = 6;
+G2L["39"]["BorderSizePixel"] = 0;
+G2L["39"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["39"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["39"]["TextSize"] = 22;
+G2L["39"]["TextColor3"] = Color3.fromRGB(96, 96, 96);
+G2L["39"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["39"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["39"]["Text"] = [[© 2023, Project Evon. All Rights Reserved.]];
+G2L["39"]["Name"] = [[CopyRight]];
+G2L["39"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs
+G2L["3a"] = Instance.new("ScrollingFrame", G2L["36"]);
+G2L["3a"]["Active"] = true;
+G2L["3a"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
+G2L["3a"]["SizeConstraint"] = Enum.SizeConstraint.RelativeYY;
+G2L["3a"]["ZIndex"] = 6;
+G2L["3a"]["BorderSizePixel"] = 0;
+G2L["3a"]["CanvasSize"] = UDim2.new(1, 0, 1, 0);
+G2L["3a"]["CanvasPosition"] = Vector2.new(0, 5.2173919677734375);
+G2L["3a"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
+G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
+G2L["3a"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["3a"]["BackgroundTransparency"] = 0.5;
+G2L["3a"]["Size"] = UDim2.new(0, 100, 0, 115);
+G2L["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3a"]["Position"] = UDim2.new(0, 0, 0, 75);
+G2L["3a"]["Name"] = [[Tabs]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.UICorner
-G2L["39"] = Instance.new("UICorner", G2L["38"]);
-G2L["39"]["CornerRadius"] = UDim.new(0, 15);
+G2L["3b"] = Instance.new("UICorner", G2L["3a"]);
+G2L["3b"]["CornerRadius"] = UDim.new(0, 15);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.UIListLayout
-G2L["3a"] = Instance.new("UIListLayout", G2L["38"]);
-G2L["3a"]["Padding"] = UDim.new(0, 5);
-G2L["3a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["3c"] = Instance.new("UIListLayout", G2L["3a"]);
+G2L["3c"]["Padding"] = UDim.new(0, 5);
+G2L["3c"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.MainTabButton
-G2L["3b"] = Instance.new("TextButton", G2L["38"]);
-G2L["3b"]["TextWrapped"] = true;
-G2L["3b"]["ZIndex"] = 6;
-G2L["3b"]["BorderSizePixel"] = 0;
-G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
-G2L["3b"]["TextSize"] = 17;
-G2L["3b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["3b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3b"]["Size"] = UDim2.new(0.22499999403953552, 0, 0, 25);
-G2L["3b"]["Name"] = [[MainTabButton]];
-G2L["3b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3b"]["Text"] = [[Main]];
-G2L["3b"]["BackgroundTransparency"] = 0.75;
+G2L["3d"] = Instance.new("TextButton", G2L["3a"]);
+G2L["3d"]["TextWrapped"] = true;
+G2L["3d"]["ZIndex"] = 6;
+G2L["3d"]["BorderSizePixel"] = 0;
+G2L["3d"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
+G2L["3d"]["TextSize"] = 17;
+G2L["3d"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3d"]["Size"] = UDim2.new(0.22499999403953552, 0, 0, 25);
+G2L["3d"]["Name"] = [[MainTabButton]];
+G2L["3d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3d"]["Text"] = [[Main]];
+G2L["3d"]["BackgroundTransparency"] = 0.75;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.MainTabButton.UIPadding
-G2L["3c"] = Instance.new("UIPadding", G2L["3b"]);
-G2L["3c"]["PaddingTop"] = UDim.new(0, 1);
-G2L["3c"]["PaddingRight"] = UDim.new(0, 7);
-G2L["3c"]["PaddingBottom"] = UDim.new(0, 1);
-G2L["3c"]["PaddingLeft"] = UDim.new(0, 7);
+G2L["3e"] = Instance.new("UIPadding", G2L["3d"]);
+G2L["3e"]["PaddingTop"] = UDim.new(0, 1);
+G2L["3e"]["PaddingRight"] = UDim.new(0, 7);
+G2L["3e"]["PaddingBottom"] = UDim.new(0, 1);
+G2L["3e"]["PaddingLeft"] = UDim.new(0, 7);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.MainTabButton.ClickDetector
-G2L["3d"] = Instance.new("LocalScript", G2L["3b"]);
-G2L["3d"]["Name"] = [[ClickDetector]];
+G2L["3f"] = Instance.new("LocalScript", G2L["3d"]);
+G2L["3f"]["Name"] = [[ClickDetector]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.UIPadding
-G2L["3e"] = Instance.new("UIPadding", G2L["38"]);
-G2L["3e"]["PaddingTop"] = UDim.new(0, 5);
+G2L["40"] = Instance.new("UIPadding", G2L["3a"]);
+G2L["40"]["PaddingTop"] = UDim.new(0, 5);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.LocalPlayerTabButton
-G2L["3f"] = Instance.new("TextButton", G2L["38"]);
-G2L["3f"]["TextWrapped"] = true;
-G2L["3f"]["ZIndex"] = 6;
-G2L["3f"]["BorderSizePixel"] = 0;
-G2L["3f"]["TextScaled"] = true;
-G2L["3f"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
-G2L["3f"]["TextSize"] = 20;
-G2L["3f"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["3f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3f"]["Size"] = UDim2.new(0.22499999403953552, 0, 0, 25);
-G2L["3f"]["Name"] = [[LocalPlayerTabButton]];
-G2L["3f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3f"]["Text"] = [[Local Player]];
-G2L["3f"]["BackgroundTransparency"] = 0.75;
+G2L["41"] = Instance.new("TextButton", G2L["3a"]);
+G2L["41"]["TextWrapped"] = true;
+G2L["41"]["ZIndex"] = 6;
+G2L["41"]["BorderSizePixel"] = 0;
+G2L["41"]["TextScaled"] = true;
+G2L["41"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
+G2L["41"]["TextSize"] = 20;
+G2L["41"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["41"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["41"]["Size"] = UDim2.new(0.22499999403953552, 0, 0, 25);
+G2L["41"]["Name"] = [[LocalPlayerTabButton]];
+G2L["41"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["41"]["Text"] = [[Local Player]];
+G2L["41"]["BackgroundTransparency"] = 0.75;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.LocalPlayerTabButton.UIPadding
-G2L["40"] = Instance.new("UIPadding", G2L["3f"]);
-G2L["40"]["PaddingTop"] = UDim.new(0, 1);
-G2L["40"]["PaddingRight"] = UDim.new(0, 7);
-G2L["40"]["PaddingBottom"] = UDim.new(0, 1);
-G2L["40"]["PaddingLeft"] = UDim.new(0, 7);
+G2L["42"] = Instance.new("UIPadding", G2L["41"]);
+G2L["42"]["PaddingTop"] = UDim.new(0, 1);
+G2L["42"]["PaddingRight"] = UDim.new(0, 7);
+G2L["42"]["PaddingBottom"] = UDim.new(0, 1);
+G2L["42"]["PaddingLeft"] = UDim.new(0, 7);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.LocalPlayerTabButton.ClickDetector
-G2L["41"] = Instance.new("LocalScript", G2L["3f"]);
-G2L["41"]["Name"] = [[ClickDetector]];
+G2L["43"] = Instance.new("LocalScript", G2L["41"]);
+G2L["43"]["Name"] = [[ClickDetector]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.OtherScriptsTabButton
-G2L["42"] = Instance.new("TextButton", G2L["38"]);
-G2L["42"]["TextWrapped"] = true;
-G2L["42"]["ZIndex"] = 6;
-G2L["42"]["BorderSizePixel"] = 0;
-G2L["42"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
-G2L["42"]["TextSize"] = 15;
-G2L["42"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["42"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["42"]["Size"] = UDim2.new(0.22499999403953552, 0, 0, 25);
-G2L["42"]["Name"] = [[OtherScriptsTabButton]];
-G2L["42"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["42"]["Text"] = [[Other]];
-G2L["42"]["BackgroundTransparency"] = 0.75;
+G2L["44"] = Instance.new("TextButton", G2L["3a"]);
+G2L["44"]["TextWrapped"] = true;
+G2L["44"]["ZIndex"] = 6;
+G2L["44"]["BorderSizePixel"] = 0;
+G2L["44"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
+G2L["44"]["TextSize"] = 15;
+G2L["44"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["44"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["44"]["Size"] = UDim2.new(0.22499999403953552, 0, 0, 25);
+G2L["44"]["Name"] = [[OtherScriptsTabButton]];
+G2L["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["44"]["Text"] = [[Other]];
+G2L["44"]["BackgroundTransparency"] = 0.75;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.OtherScriptsTabButton.UIPadding
-G2L["43"] = Instance.new("UIPadding", G2L["42"]);
-G2L["43"]["PaddingTop"] = UDim.new(0, 1);
-G2L["43"]["PaddingRight"] = UDim.new(0, 7);
-G2L["43"]["PaddingBottom"] = UDim.new(0, 1);
-G2L["43"]["PaddingLeft"] = UDim.new(0, 7);
+G2L["45"] = Instance.new("UIPadding", G2L["44"]);
+G2L["45"]["PaddingTop"] = UDim.new(0, 1);
+G2L["45"]["PaddingRight"] = UDim.new(0, 7);
+G2L["45"]["PaddingBottom"] = UDim.new(0, 1);
+G2L["45"]["PaddingLeft"] = UDim.new(0, 7);
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.OtherScriptsTabButton.ClickDetector
-G2L["44"] = Instance.new("LocalScript", G2L["42"]);
-G2L["44"]["Name"] = [[ClickDetector]];
+G2L["46"] = Instance.new("LocalScript", G2L["44"]);
+G2L["46"]["Name"] = [[ClickDetector]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.SettingsTabButton
+G2L["47"] = Instance.new("TextButton", G2L["3a"]);
+G2L["47"]["TextWrapped"] = true;
+G2L["47"]["ZIndex"] = 6;
+G2L["47"]["BorderSizePixel"] = 0;
+G2L["47"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
+G2L["47"]["TextSize"] = 15;
+G2L["47"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["47"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["47"]["Size"] = UDim2.new(0.22499999403953552, 0, 0, 25);
+G2L["47"]["Name"] = [[SettingsTabButton]];
+G2L["47"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["47"]["Text"] = [[Settings]];
+G2L["47"]["BackgroundTransparency"] = 0.75;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.SettingsTabButton.UIPadding
+G2L["48"] = Instance.new("UIPadding", G2L["47"]);
+G2L["48"]["PaddingTop"] = UDim.new(0, 1);
+G2L["48"]["PaddingRight"] = UDim.new(0, 7);
+G2L["48"]["PaddingBottom"] = UDim.new(0, 1);
+G2L["48"]["PaddingLeft"] = UDim.new(0, 7);
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.SettingsTabButton.ClickDetector
+G2L["49"] = Instance.new("LocalScript", G2L["47"]);
+G2L["49"]["Name"] = [[ClickDetector]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData
-G2L["45"] = Instance.new("Frame", G2L["34"]);
-G2L["45"]["ZIndex"] = 7;
-G2L["45"]["BorderSizePixel"] = 0;
-G2L["45"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["45"]["BackgroundTransparency"] = 0.800000011920929;
-G2L["45"]["Size"] = UDim2.new(1, -125, 0, 175);
-G2L["45"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["45"]["Position"] = UDim2.new(0.30000001192092896, 0, 0.2150000035762787, 0);
-G2L["45"]["Name"] = [[TabData]];
-
--- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.UIPageLayout
-G2L["46"] = Instance.new("UIPageLayout", G2L["45"]);
-G2L["46"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-G2L["46"]["Padding"] = UDim.new(0, 6);
+G2L["4a"] = Instance.new("Frame", G2L["36"]);
+G2L["4a"]["ZIndex"] = 7;
+G2L["4a"]["BorderSizePixel"] = 0;
+G2L["4a"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4a"]["BackgroundTransparency"] = 0.800000011920929;
+G2L["4a"]["Size"] = UDim2.new(1, -125, 0, 175);
+G2L["4a"]["ClipsDescendants"] = true;
+G2L["4a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4a"]["Position"] = UDim2.new(0.30000001192092896, 0, 0.2150000035762787, 0);
+G2L["4a"]["Name"] = [[TabData]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.MainTab
-G2L["47"] = Instance.new("Frame", G2L["45"]);
-G2L["47"]["ZIndex"] = 8;
-G2L["47"]["BorderSizePixel"] = 0;
-G2L["47"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["47"]["BackgroundTransparency"] = 1;
-G2L["47"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["47"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["47"]["Name"] = [[MainTab]];
+G2L["4b"] = Instance.new("Frame", G2L["4a"]);
+G2L["4b"]["ZIndex"] = 8;
+G2L["4b"]["BorderSizePixel"] = 0;
+G2L["4b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4b"]["BackgroundTransparency"] = 1;
+G2L["4b"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["4b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4b"]["Name"] = [[MainTab]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.MainTab.Tab
-G2L["48"] = Instance.new("ScrollingFrame", G2L["47"]);
-G2L["48"]["Active"] = true;
-G2L["48"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
-G2L["48"]["ZIndex"] = 8;
-G2L["48"]["BorderSizePixel"] = 0;
-G2L["48"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["48"]["BorderMode"] = Enum.BorderMode.Middle;
-G2L["48"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["48"]["BackgroundTransparency"] = 1;
-G2L["48"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["48"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["48"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["48"]["Name"] = [[Tab]];
-
--- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.MainTab.Tab.TextButton
-G2L["49"] = Instance.new("TextButton", G2L["48"]);
-G2L["49"]["ZIndex"] = 9;
-G2L["49"]["BorderSizePixel"] = 0;
-G2L["49"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
-G2L["49"]["TextSize"] = 17;
-G2L["49"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["49"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["49"]["Size"] = UDim2.new(1, -15, 0, 30);
-G2L["49"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["49"]["BackgroundTransparency"] = 0.800000011920929;
+G2L["4c"] = Instance.new("ScrollingFrame", G2L["4b"]);
+G2L["4c"]["Active"] = true;
+G2L["4c"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
+G2L["4c"]["ZIndex"] = 8;
+G2L["4c"]["BorderSizePixel"] = 0;
+G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4c"]["BorderMode"] = Enum.BorderMode.Middle;
+G2L["4c"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["4c"]["BackgroundTransparency"] = 1;
+G2L["4c"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["4c"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4c"]["Name"] = [[Tab]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.MainTab.Tab.UIListLayout
-G2L["4a"] = Instance.new("UIListLayout", G2L["48"]);
-G2L["4a"]["Padding"] = UDim.new(0, 5);
-G2L["4a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["4d"] = Instance.new("UIListLayout", G2L["4c"]);
+G2L["4d"]["Padding"] = UDim.new(0, 5);
+G2L["4d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.MainTab.Tab.TextLabel
+G2L["4e"] = Instance.new("TextLabel", G2L["4c"]);
+G2L["4e"]["ZIndex"] = 9;
+G2L["4e"]["BorderSizePixel"] = 0;
+G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["4e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4e"]["TextSize"] = 17;
+G2L["4e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4e"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["4e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4e"]["Text"] = [[Game Sensing Coming Soon.]];
+G2L["4e"]["BackgroundTransparency"] = 0.800000011920929;
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.MainTab.UICorner
-G2L["4b"] = Instance.new("UICorner", G2L["47"]);
+G2L["4f"] = Instance.new("UICorner", G2L["4b"]);
 
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer
+G2L["50"] = Instance.new("Frame", G2L["4a"]);
+G2L["50"]["ZIndex"] = 9;
+G2L["50"]["BorderSizePixel"] = 0;
+G2L["50"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["50"]["BackgroundTransparency"] = 1;
+G2L["50"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["50"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["50"]["Position"] = UDim2.new(1, 6, 0, 0);
+G2L["50"]["Name"] = [[LocalPlayer]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab
+G2L["51"] = Instance.new("ScrollingFrame", G2L["50"]);
+G2L["51"]["Active"] = true;
+G2L["51"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
+G2L["51"]["ZIndex"] = 8;
+G2L["51"]["BorderSizePixel"] = 0;
+G2L["51"]["CanvasPosition"] = Vector2.new(0, 150);
+G2L["51"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["51"]["BorderMode"] = Enum.BorderMode.Middle;
+G2L["51"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["51"]["BackgroundTransparency"] = 1;
+G2L["51"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["51"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["51"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["51"]["Name"] = [[Tab]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.UIListLayout
+G2L["52"] = Instance.new("UIListLayout", G2L["51"]);
+G2L["52"]["Padding"] = UDim.new(0, 5);
+G2L["52"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Walkspeed
+G2L["53"] = Instance.new("TextBox", G2L["51"]);
+G2L["53"]["CursorPosition"] = -1;
+G2L["53"]["PlaceholderColor3"] = Color3.fromRGB(179, 179, 179);
+G2L["53"]["ZIndex"] = 9;
+G2L["53"]["BorderSizePixel"] = 0;
+G2L["53"]["TextSize"] = 17;
+G2L["53"]["TextWrapped"] = true;
+G2L["53"]["TextScaled"] = true;
+G2L["53"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["53"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["53"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["53"]["BackgroundTransparency"] = 0.800000011920929;
+G2L["53"]["PlaceholderText"] = [[WalkSpeed]];
+G2L["53"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["53"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["53"]["Text"] = [[]];
+G2L["53"]["Name"] = [[Walkspeed]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetWalkspeed
+G2L["54"] = Instance.new("TextButton", G2L["51"]);
+G2L["54"]["ZIndex"] = 9;
+G2L["54"]["BorderSizePixel"] = 0;
+G2L["54"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["54"]["TextSize"] = 17;
+G2L["54"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["54"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["54"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["54"]["Name"] = [[SetWalkspeed]];
+G2L["54"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["54"]["Text"] = [[Set WalkSpeed]];
+G2L["54"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetWalkspeed.ClickDetector
+G2L["55"] = Instance.new("LocalScript", G2L["54"]);
+G2L["55"]["Name"] = [[ClickDetector]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Jumppower
+G2L["56"] = Instance.new("TextBox", G2L["51"]);
+G2L["56"]["PlaceholderColor3"] = Color3.fromRGB(179, 179, 179);
+G2L["56"]["ZIndex"] = 9;
+G2L["56"]["BorderSizePixel"] = 0;
+G2L["56"]["TextSize"] = 17;
+G2L["56"]["TextWrapped"] = true;
+G2L["56"]["TextScaled"] = true;
+G2L["56"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["56"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["56"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["56"]["BackgroundTransparency"] = 0.800000011920929;
+G2L["56"]["PlaceholderText"] = [[JumpPower]];
+G2L["56"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["56"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["56"]["Text"] = [[]];
+G2L["56"]["Name"] = [[Jumppower]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetJumppower
+G2L["57"] = Instance.new("TextButton", G2L["51"]);
+G2L["57"]["ZIndex"] = 9;
+G2L["57"]["BorderSizePixel"] = 0;
+G2L["57"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["57"]["TextSize"] = 17;
+G2L["57"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["57"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["57"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["57"]["Name"] = [[SetJumppower]];
+G2L["57"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["57"]["Text"] = [[Set JumpPower]];
+G2L["57"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetJumppower.ClickDetector
+G2L["58"] = Instance.new("LocalScript", G2L["57"]);
+G2L["58"]["Name"] = [[ClickDetector]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Health
+G2L["59"] = Instance.new("TextBox", G2L["51"]);
+G2L["59"]["CursorPosition"] = -1;
+G2L["59"]["PlaceholderColor3"] = Color3.fromRGB(179, 179, 179);
+G2L["59"]["ZIndex"] = 9;
+G2L["59"]["BorderSizePixel"] = 0;
+G2L["59"]["RichText"] = true;
+G2L["59"]["TextSize"] = 17;
+G2L["59"]["TextWrapped"] = true;
+G2L["59"]["TextScaled"] = true;
+G2L["59"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["59"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["59"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["59"]["BackgroundTransparency"] = 0.800000011920929;
+G2L["59"]["PlaceholderText"] = [[Health]];
+G2L["59"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["59"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["59"]["Text"] = [[]];
+G2L["59"]["Name"] = [[Health]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetHealth
+G2L["5a"] = Instance.new("TextButton", G2L["51"]);
+G2L["5a"]["ZIndex"] = 9;
+G2L["5a"]["BorderSizePixel"] = 0;
+G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["5a"]["TextSize"] = 17;
+G2L["5a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5a"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["5a"]["Name"] = [[SetHealth]];
+G2L["5a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5a"]["Text"] = [[Set Health]];
+G2L["5a"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetHealth.ClickDetector
+G2L["5b"] = Instance.new("LocalScript", G2L["5a"]);
+G2L["5b"]["Name"] = [[ClickDetector]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Heal
+G2L["5c"] = Instance.new("TextButton", G2L["51"]);
+G2L["5c"]["ZIndex"] = 9;
+G2L["5c"]["BorderSizePixel"] = 0;
+G2L["5c"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["5c"]["TextSize"] = 17;
+G2L["5c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5c"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["5c"]["Name"] = [[Heal]];
+G2L["5c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5c"]["Text"] = [[Heal]];
+G2L["5c"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Heal.ClickDetector
+G2L["5d"] = Instance.new("LocalScript", G2L["5c"]);
+G2L["5d"]["Name"] = [[ClickDetector]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Noclip
+G2L["5e"] = Instance.new("TextButton", G2L["51"]);
+G2L["5e"]["ZIndex"] = 9;
+G2L["5e"]["BorderSizePixel"] = 0;
+G2L["5e"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["5e"]["TextSize"] = 17;
+G2L["5e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5e"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["5e"]["Name"] = [[Noclip]];
+G2L["5e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5e"]["Text"] = [[Noclip]];
+G2L["5e"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Noclip.Border
+G2L["5f"] = Instance.new("Frame", G2L["5e"]);
+G2L["5f"]["ZIndex"] = 9;
+G2L["5f"]["BorderSizePixel"] = 0;
+G2L["5f"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5f"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["5f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5f"]["Position"] = UDim2.new(0.884615421295166, 0, 0, 0);
+G2L["5f"]["Name"] = [[Border]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Noclip.Border.Check
+G2L["60"] = Instance.new("Frame", G2L["5f"]);
+G2L["60"]["ZIndex"] = 9;
+G2L["60"]["BorderSizePixel"] = 0;
+G2L["60"]["BackgroundColor3"] = Color3.fromRGB(171, 0, 0);
+G2L["60"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["60"]["Size"] = UDim2.new(0, 20, 0, 20);
+G2L["60"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["60"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["60"]["Name"] = [[Check]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Noclip.Border.Check.UICorner
+G2L["61"] = Instance.new("UICorner", G2L["60"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Noclip.Border.UICorner
+G2L["62"] = Instance.new("UICorner", G2L["5f"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Noclip.LocalScript
+G2L["63"] = Instance.new("LocalScript", G2L["5e"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.ESP
+G2L["64"] = Instance.new("TextButton", G2L["51"]);
+G2L["64"]["ZIndex"] = 9;
+G2L["64"]["BorderSizePixel"] = 0;
+G2L["64"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["64"]["TextSize"] = 17;
+G2L["64"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["64"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["64"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["64"]["Name"] = [[ESP]];
+G2L["64"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["64"]["Text"] = [[ESP]];
+G2L["64"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.ESP.Border
+G2L["65"] = Instance.new("Frame", G2L["64"]);
+G2L["65"]["ZIndex"] = 9;
+G2L["65"]["BorderSizePixel"] = 0;
+G2L["65"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["65"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["65"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["65"]["Position"] = UDim2.new(0.884615421295166, 0, 0, 0);
+G2L["65"]["Name"] = [[Border]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.ESP.Border.Check
+G2L["66"] = Instance.new("Frame", G2L["65"]);
+G2L["66"]["ZIndex"] = 9;
+G2L["66"]["BorderSizePixel"] = 0;
+G2L["66"]["BackgroundColor3"] = Color3.fromRGB(171, 0, 0);
+G2L["66"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["66"]["Size"] = UDim2.new(0, 20, 0, 20);
+G2L["66"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["66"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["66"]["Name"] = [[Check]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.ESP.Border.Check.UICorner
+G2L["67"] = Instance.new("UICorner", G2L["66"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.ESP.Border.UICorner
+G2L["68"] = Instance.new("UICorner", G2L["65"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.ESP.LocalScript
+G2L["69"] = Instance.new("LocalScript", G2L["64"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.UICorner
+G2L["6a"] = Instance.new("UICorner", G2L["50"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Other
+G2L["6b"] = Instance.new("Frame", G2L["4a"]);
+G2L["6b"]["ZIndex"] = 8;
+G2L["6b"]["BorderSizePixel"] = 0;
+G2L["6b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6b"]["BackgroundTransparency"] = 1;
+G2L["6b"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["6b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6b"]["Position"] = UDim2.new(2, 6, 0, 0);
+G2L["6b"]["Name"] = [[Other]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Other.Tab
+G2L["6c"] = Instance.new("ScrollingFrame", G2L["6b"]);
+G2L["6c"]["Active"] = true;
+G2L["6c"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
+G2L["6c"]["ZIndex"] = 8;
+G2L["6c"]["BorderSizePixel"] = 0;
+G2L["6c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6c"]["BorderMode"] = Enum.BorderMode.Middle;
+G2L["6c"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["6c"]["BackgroundTransparency"] = 1;
+G2L["6c"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["6c"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6c"]["Name"] = [[Tab]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Other.Tab.TextButton
+G2L["6d"] = Instance.new("TextButton", G2L["6c"]);
+G2L["6d"]["ZIndex"] = 9;
+G2L["6d"]["BorderSizePixel"] = 0;
+G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["6d"]["TextSize"] = 17;
+G2L["6d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6d"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["6d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6d"]["Text"] = [[Other]];
+G2L["6d"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Other.Tab.UIListLayout
+G2L["6e"] = Instance.new("UIListLayout", G2L["6c"]);
+G2L["6e"]["Padding"] = UDim.new(0, 5);
+G2L["6e"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Other.UICorner
+G2L["6f"] = Instance.new("UICorner", G2L["6b"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings
+G2L["70"] = Instance.new("Frame", G2L["4a"]);
+G2L["70"]["ZIndex"] = 8;
+G2L["70"]["BorderSizePixel"] = 0;
+G2L["70"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["70"]["BackgroundTransparency"] = 1;
+G2L["70"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["70"]["Position"] = UDim2.new(3, 6, 0, 0);
+G2L["70"]["Name"] = [[Settings]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab
+G2L["71"] = Instance.new("ScrollingFrame", G2L["70"]);
+G2L["71"]["Active"] = true;
+G2L["71"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
+G2L["71"]["ZIndex"] = 8;
+G2L["71"]["BorderSizePixel"] = 0;
+G2L["71"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["71"]["BorderMode"] = Enum.BorderMode.Middle;
+G2L["71"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["71"]["BackgroundTransparency"] = 1;
+G2L["71"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["71"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["71"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["71"]["Name"] = [[Tab]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms
+G2L["72"] = Instance.new("TextButton", G2L["71"]);
+G2L["72"]["ZIndex"] = 9;
+G2L["72"]["BorderSizePixel"] = 0;
+G2L["72"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["72"]["TextSize"] = 17;
+G2L["72"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["72"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["72"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["72"]["Name"] = [[FastAnms]];
+G2L["72"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["72"]["Text"] = [[Fast Animations]];
+G2L["72"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms.Border
+G2L["73"] = Instance.new("Frame", G2L["72"]);
+G2L["73"]["ZIndex"] = 9;
+G2L["73"]["BorderSizePixel"] = 0;
+G2L["73"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["73"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["73"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["73"]["Position"] = UDim2.new(0.884615421295166, 0, 0, 0);
+G2L["73"]["Name"] = [[Border]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms.Border.Check
+G2L["74"] = Instance.new("Frame", G2L["73"]);
+G2L["74"]["ZIndex"] = 9;
+G2L["74"]["BorderSizePixel"] = 0;
+G2L["74"]["BackgroundColor3"] = Color3.fromRGB(171, 0, 0);
+G2L["74"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["74"]["Size"] = UDim2.new(0, 20, 0, 20);
+G2L["74"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["74"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["74"]["Name"] = [[Check]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms.Border.Check.UICorner
+G2L["75"] = Instance.new("UICorner", G2L["74"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms.Border.UICorner
+G2L["76"] = Instance.new("UICorner", G2L["73"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms.LocalScript
+G2L["77"] = Instance.new("LocalScript", G2L["72"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.UIListLayout
+G2L["78"] = Instance.new("UIListLayout", G2L["71"]);
+G2L["78"]["Padding"] = UDim.new(0, 5);
+G2L["78"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.MouseFade
+G2L["79"] = Instance.new("TextButton", G2L["71"]);
+G2L["79"]["ZIndex"] = 9;
+G2L["79"]["BorderSizePixel"] = 0;
+G2L["79"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["79"]["TextSize"] = 17;
+G2L["79"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["79"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["79"]["Size"] = UDim2.new(1, -15, 0, 30);
+G2L["79"]["Name"] = [[MouseFade]];
+G2L["79"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["79"]["Text"] = [[Mouse Exit/Enter Fade]];
+G2L["79"]["BackgroundTransparency"] = 0.800000011920929;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.MouseFade.Border
+G2L["7a"] = Instance.new("Frame", G2L["79"]);
+G2L["7a"]["ZIndex"] = 9;
+G2L["7a"]["BorderSizePixel"] = 0;
+G2L["7a"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7a"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["7a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7a"]["Position"] = UDim2.new(0.884615421295166, 0, 0, 0);
+G2L["7a"]["Name"] = [[Border]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.MouseFade.Border.Check
+G2L["7b"] = Instance.new("Frame", G2L["7a"]);
+G2L["7b"]["ZIndex"] = 9;
+G2L["7b"]["BorderSizePixel"] = 0;
+G2L["7b"]["BackgroundColor3"] = Color3.fromRGB(171, 0, 0);
+G2L["7b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["7b"]["Size"] = UDim2.new(0, 20, 0, 20);
+G2L["7b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["7b"]["Name"] = [[Check]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.MouseFade.Border.Check.UICorner
+G2L["7c"] = Instance.new("UICorner", G2L["7b"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.MouseFade.Border.UICorner
+G2L["7d"] = Instance.new("UICorner", G2L["7a"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.MouseFade.LocalScript
+G2L["7e"] = Instance.new("LocalScript", G2L["79"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.UICorner
+G2L["7f"] = Instance.new("UICorner", G2L["70"]);
+
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.FastAnimations
+G2L["80"] = Instance.new("TextLabel", G2L["4a"]);
+G2L["80"]["ZIndex"] = -10;
+G2L["80"]["BorderSizePixel"] = 0;
+G2L["80"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["80"]["TextTransparency"] = 1;
+G2L["80"]["TextSize"] = 1;
+G2L["80"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["80"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["80"]["Text"] = [[false]];
+G2L["80"]["Name"] = [[FastAnimations]];
+G2L["80"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.MouseFade
+G2L["81"] = Instance.new("TextLabel", G2L["4a"]);
+G2L["81"]["ZIndex"] = -10;
+G2L["81"]["BorderSizePixel"] = 0;
+G2L["81"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["81"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["81"]["TextTransparency"] = 1;
+G2L["81"]["TextSize"] = 1;
+G2L["81"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["81"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["81"]["Text"] = [[false]];
+G2L["81"]["Name"] = [[MouseFade]];
+G2L["81"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Close
+G2L["82"] = Instance.new("TextButton", G2L["36"]);
+G2L["82"]["TextWrapped"] = true;
+G2L["82"]["ZIndex"] = 6;
+G2L["82"]["BorderSizePixel"] = 0;
+G2L["82"]["TextScaled"] = true;
+G2L["82"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["82"]["TextSize"] = 14;
+G2L["82"]["FontFace"] = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["82"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["82"]["Size"] = UDim2.new(0, 50, 0, 50);
+G2L["82"]["Name"] = [[Close]];
+G2L["82"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["82"]["Text"] = [[X]];
+G2L["82"]["Position"] = UDim2.new(0, 150, 0, 0);
+G2L["82"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Close.CloseFramework
+G2L["83"] = Instance.new("LocalScript", G2L["82"]);
+G2L["83"]["Name"] = [[CloseFramework]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Minimize
+G2L["84"] = Instance.new("TextButton", G2L["36"]);
+G2L["84"]["TextWrapped"] = true;
+G2L["84"]["ZIndex"] = 6;
+G2L["84"]["BorderSizePixel"] = 0;
+G2L["84"]["TextScaled"] = true;
+G2L["84"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["84"]["TextSize"] = 14;
+G2L["84"]["FontFace"] = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["84"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["84"]["Size"] = UDim2.new(0, 50, 0, 50);
+G2L["84"]["Name"] = [[Minimize]];
+G2L["84"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["84"]["Text"] = [[-]];
+G2L["84"]["Position"] = UDim2.new(0, 100, 0, 0);
+G2L["84"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Minimize.MinimizeFramework
+G2L["85"] = Instance.new("LocalScript", G2L["84"]);
+G2L["85"]["Name"] = [[MinimizeFramework]];
+
+-- StarterGui.ProjectEvon.DragNode.MainUi.MouseEnterExitFadeManager
+G2L["86"] = Instance.new("LocalScript", G2L["5"]);
+G2L["86"]["Name"] = [[MouseEnterExitFadeManager]];
 
 -- StarterGui.ProjectEvon.DragNode.DragManager
-G2L["4c"] = Instance.new("LocalScript", G2L["2"]);
-G2L["4c"]["Name"] = [[DragManager]];
-
--- StarterGui.ProjectEvon.DragNode.LocalScript
-G2L["4d"] = Instance.new("LocalScript", G2L["2"]);
-
-
+local function C_3()
+local script = G2L["3"];
+	DragNode = script.Parent
+	DragNode.Draggable = true
+	DragNode.Selectable = true
+	DragNode.Active = true
+end;
+task.spawn(C_3);
+-- StarterGui.ProjectEvon.DragNode.FailedToggle
+local function C_4()
+local script = G2L["4"];
+	-- Keybinds
+	local keybinds = {
+		Enum.KeyCode.P,
+		Enum.KeyCode.RightControl,
+		Enum.KeyCode.RightShift,
+		Enum.KeyCode.N
+	}
+	
+	local player = game:GetService("Players").LocalPlayer
+	local isChatting = false
+	
+	local function checkChatting()
+		local chatModule = player.PlayerGui:FindFirstChild("Chat")
+		if chatModule then
+			local textBox = chatModule:FindFirstChild("Frame"):FindFirstChild("ChatBar"):FindFirstChild("InputFrame"):FindFirstChild("TextBoxFrame"):FindFirstChild("TextBox")
+			if textBox then
+				isChatting = textBox:IsFocused()
+			end
+		end
+	end
+	
+	local function onKeyPress(input)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if not isChatting and table.find(keybinds, input.KeyCode) then
+				script.Parent.Visible = not script.Parent.Visible
+				print("Project Evon | UI Has Been Toggled")
+			end
+		end
+	end
+	
+	player.PlayerGui.ChildAdded:Connect(checkChatting)
+	player.PlayerGui.ChildRemoved:Connect(checkChatting)
+	game:GetService("UserInputService").InputBegan:Connect(onKeyPress)
+	
+	-- Connect the key press event
+	game:GetService("UserInputService").InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			local keyCode = input.KeyCode
+			if table.find(keybinds, keyCode) then
+				onKeyPress(input)
+			end
+		end
+	end)
+	
+end;
+task.spawn(C_4);
 -- StarterGui.ProjectEvon.DragNode.MainUi.Logo.Framework
-local function C_6()
-local script = G2L["6"];
+local function C_8()
+local script = G2L["8"];
 	script.Parent.Size = UDim2.new(0,50,0,50)
 	script.Parent.Position = UDim2.new(0,200,0,25)
 	script.Parent.Parent.ImageLabel.ImageTransparency = 1
@@ -700,10 +1291,10 @@ local script = G2L["6"];
 		script.Parent.Parent.Executor.TextTransparency -= 0.1
 	end
 end;
-task.spawn(C_6);
+task.spawn(C_8);
 -- StarterGui.ProjectEvon.DragNode.MainUi.Logo.ImageLabel.PFPManager
-local function C_c()
-local script = G2L["c"];
+local function C_e()
+local script = G2L["e"];
 	local player = game.Players.LocalPlayer
 	
 	local imageLabel = script.Parent
@@ -727,10 +1318,10 @@ local script = G2L["c"];
 	player.CharacterAdded:Connect(setProfilePicture)
 	
 end;
-task.spawn(C_c);
+task.spawn(C_e);
 -- StarterGui.ProjectEvon.DragNode.MainUi.Executor.ExecutorDetector
-local function C_e()
-local script = G2L["e"];
+local function C_10()
+local script = G2L["10"];
 	local isExecutor = false
 	local executorType = "Unknown"
 	
@@ -745,22 +1336,22 @@ local script = G2L["e"];
 	script.Parent.Text = ("Executor API: " .. (isExecutor and executorType or "Not Detected"))
 	
 end;
-task.spawn(C_e);
+task.spawn(C_10);
 -- StarterGui.ProjectEvon.DragNode.MainUi.TopVerify.UserVerifyDisplayManager
-local function C_11()
-local script = G2L["11"];
-	script.Parent.Text = ('Are You "' .. tostring(game.Players.LocalPlayer) .. '"?')
-end;
-task.spawn(C_11);
--- StarterGui.ProjectEvon.DragNode.MainUi.BottomVerify.UserVerifyDisplayManager
 local function C_13()
 local script = G2L["13"];
-	script.Parent.Text = ('"' .. tostring(game.Players.LocalPlayer) ..'" Is Trying To Use Project Evon On Your Account.')
+	script.Parent.Text = ('Are You "' .. tostring(game.Players.LocalPlayer) .. '"?')
 end;
 task.spawn(C_13);
+-- StarterGui.ProjectEvon.DragNode.MainUi.BottomVerify.UserVerifyDisplayManager
+local function C_15()
+local script = G2L["15"];
+	script.Parent.Text = ('"' .. tostring(game.Players.LocalPlayer) ..'" Is Trying To Use Project Evon On Your Account.')
+end;
+task.spawn(C_15);
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.Yes.YesButton.ClickDetector
-local function C_1d()
-local script = G2L["1d"];
+local function C_1f()
+local script = G2L["1f"];
 	script.Parent.Parent.Parent.Position = UDim2.new(0,0,0,0)
 	script.Parent.Parent.Parent.Parent.ConfirmFrame.Position = UDim2.new(0,400,0,0)
 	script.Parent.MouseButton1Click:Connect(function()
@@ -792,10 +1383,10 @@ local script = G2L["1d"];
 		)
 	end)
 end;
-task.spawn(C_1d);
+task.spawn(C_1f);
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.Buttons.No.NoButton.ClickDetector
-local function C_24()
-local script = G2L["24"];
+local function C_26()
+local script = G2L["26"];
 	script.Parent.MouseButton1Click:Connect(function()
 		wait(0.1)
 		for i = 0, 10 do
@@ -848,10 +1439,10 @@ local script = G2L["24"];
 		script.Parent.Parent.Parent.Parent.Parent.Parent:Destroy()
 	end)
 end;
-task.spawn(C_24);
+task.spawn(C_26);
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.No.NoButton.ClickDetector
-local function C_2c()
-local script = G2L["2c"];
+local function C_2e()
+local script = G2L["2e"];
 	script.Parent.MouseButton1Click:Connect(function()
 		wait(0.1)
 		for i = 0, 10 do
@@ -904,10 +1495,10 @@ local script = G2L["2c"];
 		script.Parent.Parent.Parent.Parent.Parent.Parent:Destroy()
 	end)
 end;
-task.spawn(C_2c);
+task.spawn(C_2e);
 -- StarterGui.ProjectEvon.DragNode.MainUi.ButtonsFrame.ConfirmFrame.Yes.YesButton.ClickDetector
-local function C_33()
-local script = G2L["33"];
+local function C_35()
+local script = G2L["35"];
 	script.Parent.MouseButton1Click:Connect(function()
 		wait(0.1)
 		for i = 0, 10 do
@@ -943,81 +1534,639 @@ local script = G2L["33"];
 		)
 	end)
 end;
-task.spawn(C_33);
+task.spawn(C_35);
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.MainTabButton.ClickDetector
-local function C_3d()
-local script = G2L["3d"];
+local function C_3f()
+local script = G2L["3f"];
 	script.Parent.MouseButton1Click:Connect(function()
-		-- script here...
+		if script.Parent.Parent.Parent.TabData.FastAnimations.Text == "false" then
+			script.Parent.Parent.Parent.TabData.MainTab:TweenPosition(
+				UDim2.new(0,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Other:TweenPosition(
+				UDim2.new(2,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.LocalPlayer:TweenPosition(
+				UDim2.new(1,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Settings:TweenPosition(
+				UDim2.new(3,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+		else
+			script.Parent.Parent.Parent.TabData.MainTab:TweenPosition(
+				UDim2.new(0,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Other:TweenPosition(
+				UDim2.new(2,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.LocalPlayer:TweenPosition(
+				UDim2.new(1,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Settings:TweenPosition(
+				UDim2.new(3,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+		end
 	end)
 end;
-task.spawn(C_3d);
+task.spawn(C_3f);
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.LocalPlayerTabButton.ClickDetector
-local function C_41()
-local script = G2L["41"];
+local function C_43()
+local script = G2L["43"];
 	script.Parent.MouseButton1Click:Connect(function()
-		-- script here...
+		if script.Parent.Parent.Parent.TabData.FastAnimations.Text == "false" then
+			script.Parent.Parent.Parent.TabData.MainTab:TweenPosition(
+				UDim2.new(-1,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Other:TweenPosition(
+				UDim2.new(1,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.LocalPlayer:TweenPosition(
+				UDim2.new(0,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Settings:TweenPosition(
+				UDim2.new(2,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+		else
+			script.Parent.Parent.Parent.TabData.MainTab:TweenPosition(
+				UDim2.new(-1,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Other:TweenPosition(
+				UDim2.new(1,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.LocalPlayer:TweenPosition(
+				UDim2.new(0,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Settings:TweenPosition(
+				UDim2.new(2,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+		end
 	end)
 end;
-task.spawn(C_41);
+task.spawn(C_43);
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.OtherScriptsTabButton.ClickDetector
-local function C_44()
-local script = G2L["44"];
+local function C_46()
+local script = G2L["46"];
 	script.Parent.MouseButton1Click:Connect(function()
-		-- script here...
+		if script.Parent.Parent.Parent.TabData.FastAnimations.Text == "false" then
+			script.Parent.Parent.Parent.TabData.MainTab:TweenPosition(
+				UDim2.new(-2,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Other:TweenPosition(
+				UDim2.new(0,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.LocalPlayer:TweenPosition(
+				UDim2.new(-1,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Settings:TweenPosition(
+				UDim2.new(1,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+		else
+			script.Parent.Parent.Parent.TabData.MainTab:TweenPosition(
+				UDim2.new(-2,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Other:TweenPosition(
+				UDim2.new(0,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.LocalPlayer:TweenPosition(
+				UDim2.new(-1,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Settings:TweenPosition(
+				UDim2.new(1,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+		end
 	end)
 end;
-task.spawn(C_44);
--- StarterGui.ProjectEvon.DragNode.DragManager
-local function C_4c()
-local script = G2L["4c"];
-	DragNode = script.Parent
-	DragNode.Draggable = true
-	DragNode.Selectable = true
-	DragNode.Active = true
+task.spawn(C_46);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Tabs.SettingsTabButton.ClickDetector
+local function C_49()
+local script = G2L["49"];
+	script.Parent.MouseButton1Click:Connect(function()
+		if script.Parent.Parent.Parent.TabData.FastAnimations.Text == "false" then
+			script.Parent.Parent.Parent.TabData.MainTab:TweenPosition(
+				UDim2.new(-3,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Other:TweenPosition(
+				UDim2.new(-1,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.LocalPlayer:TweenPosition(
+				UDim2.new(-2,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Settings:TweenPosition(
+				UDim2.new(0,0,0,0),
+				"Out",
+				"Back",
+				1,
+				true
+			)
+		else
+			script.Parent.Parent.Parent.TabData.MainTab:TweenPosition(
+				UDim2.new(-3,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Other:TweenPosition(
+				UDim2.new(-1,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.LocalPlayer:TweenPosition(
+				UDim2.new(-2,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+			script.Parent.Parent.Parent.TabData.Settings:TweenPosition(
+				UDim2.new(0,0,0,0),
+				"Out",
+				"Back",
+				0,
+				true
+			)
+		end
+	end)
 end;
-task.spawn(C_4c);
--- StarterGui.ProjectEvon.DragNode.LocalScript
-local function C_4d()
-local script = G2L["4d"];
-	-- Keybinds
-	local keybinds = {
-		Enum.KeyCode.P,
-		Enum.KeyCode.RightControl,
-		Enum.KeyCode.RightShift,
-		Enum.KeyCode.N
-	}
+task.spawn(C_49);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetWalkspeed.ClickDetector
+local function C_55()
+local script = G2L["55"];
+	script.Parent.MouseButton1Click:Connect(function()
+		game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").WalkSpeed = script.Parent.Parent.Walkspeed.Text
+	end)
+end;
+task.spawn(C_55);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetJumppower.ClickDetector
+local function C_58()
+local script = G2L["58"];
+	script.Parent.MouseButton1Click:Connect(function()
+		game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").JumpPower = script.Parent.Parent.Jumppower.Text
+	end)
+end;
+task.spawn(C_58);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.SetHealth.ClickDetector
+local function C_5b()
+local script = G2L["5b"];
+	script.Parent.MouseButton1Click:Connect(function()
+		if (script.Parent.Parent.Health.Text == "inf" or script.Parent.Parent.Health.Text == "INF" or script.Parent.Parent.Health.Text == "Inf") then
+			game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").MaxHealth = math.huge
+			game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").MaxHealth
+		else
+			game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").MaxHealth = script.Parent.Parent.Health.Text
+		end
+	end)
+end;
+task.spawn(C_5b);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Heal.ClickDetector
+local function C_5d()
+local script = G2L["5d"];
+	script.Parent.MouseButton1Click:Connect(function()
+		game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").MaxHealth
+	end)
+end;
+task.spawn(C_5d);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Noclip.LocalScript
+local function C_63()
+local script = G2L["63"];
+	-- Variable to track if noclip is enabled or not
+	local noclipEnabled = false
 	
-	-- Function to check if the key is a valid keybind and not in chat
-	local function isValidKey(keyCode)
-		local player = game:GetService("Players").LocalPlayer
+	-- Table to store the initial anchored state of each part
+	local initialAnchoredStates = {}
 	
-		-- Check if the key is in the keybinds list
-		local isKeybind = false
-		for _, bindKey in ipairs(keybinds) do
-			if bindKey == keyCode then
-				isKeybind = true
-				break
+	-- Function to toggle noclip for a specific character
+	local function toggleNoclip(character)
+		if character then
+			for _, part in ipairs(character:GetDescendants()) do
+				if part:IsA("BasePart") then
+					-- Noclip for the local player's character
+					if part:IsDescendantOf(game.Players.LocalPlayer.Character) then
+						part.CanCollide = not noclipEnabled
+	
+						-- Store the initial anchored state
+						if noclipEnabled then
+							initialAnchoredStates[part] = part.Anchored
+							part.Anchored = false
+						else
+							-- Restore the initial anchored state
+							local initialAnchored = initialAnchoredStates[part]
+							if initialAnchored ~= nil then
+								part.Anchored = initialAnchored
+							end
+						end
+					else
+						-- Noclip for other players' characters
+						part.CanCollide = false
+					end
+				end
 			end
 		end
-	
-		-- Check if the player is typing in the chat
-		local isChatting = player.PlayerGui:GetPropertyChangedSignal("ResetOnSpawn"):Wait()
-	
-		return isKeybind and not isChatting
 	end
 	
-	-- Function to handle key presses
-	local function onKeyPress(input)
-		if input.UserInputType == Enum.UserInputType.Keyboard and isValidKey(input.KeyCode) then
-			print("Project Evon | UI Has Been Toggled")
+	-- Function to handle character added event
+	local function onCharacterAdded(character)
+		toggleNoclip(character)
+	end
+	
+	-- Function to handle character removing event
+	local function onCharacterRemoving(character)
+		-- Clear the initial anchored states for the character's parts
+		for part, _ in pairs(initialAnchoredStates) do
+			if part:IsDescendantOf(character) then
+				initialAnchoredStates[part] = nil
+			end
 		end
 	end
 	
-	-- Connect the key press event
-	game:GetService("UserInputService").InputBegan:Connect(onKeyPress)
+	-- Function to toggle noclip for all players
+	local function toggleNoclipForAllPlayers()
+		noclipEnabled = not noclipEnabled
+		print("Noclip " .. (noclipEnabled and "enabled" or "disabled"))
+	
+		-- Toggle noclip for the local player's character
+		toggleNoclip(game.Players.LocalPlayer.Character)
+	
+		-- Toggle noclip for other players' characters
+		for _, player in ipairs(game.Players:GetPlayers()) do
+			toggleNoclip(player.Character)
+		end
+	end
+	
+	-- Function to handle GUI button click event
+	local guiButton = script.Parent
+	local checkButton = guiButton.Border.Check
+	
+	local function onButtonClick()
+		toggleNoclipForAllPlayers()
+	
+		-- Toggle the check button appearance
+		if noclipEnabled then
+			local walkspeed = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").WalkSpeed
+			local originalws = walkspeed
+			walkspeed = 100
+			walkspeed = originalws
+			checkButton.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+		else
+			checkButton.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+		end
+	end
+	
+	-- Connect GUI button click event to toggle noclip
+	guiButton.MouseButton1Click:Connect(onButtonClick)
+	
+	-- Connect character added and removing events for all players
+	game.Players.PlayerAdded:Connect(function(player)
+		player.CharacterAdded:Connect(function(character)
+			onCharacterAdded(character)
+		end)
+		player.CharacterRemoving:Connect(function(character)
+			onCharacterRemoving(character)
+		end)
+	end)
+	
+	-- Check if the local player already has a character (in case the script is inserted after the player has spawned)
+	local localPlayer = game.Players.LocalPlayer
+	if localPlayer.Character then
+		onCharacterAdded(localPlayer.Character)
+	end
+	
+	-- Toggle noclip initially based on the starting state of the GUI button
+	toggleNoclipForAllPlayers()
 	
 end;
-task.spawn(C_4d);
+task.spawn(C_63);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.ESP.LocalScript
+local function C_69()
+local script = G2L["69"];
+	local player = game.Players.LocalPlayer
+	local enabled = false -- Variable to store the ESP toggle state
+	
+	-- Function to toggle ESP on or off
+	local function toggleESP()
+		enabled = not enabled -- Toggle the state
+	
+		-- Change the color of the checkmark based on the state
+		if enabled then
+			script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(0, 170, 0) -- Green
+		else
+			script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(170, 0, 0) -- Red
+		end
+	
+		-- Enable or disable ESP for players
+		for _, player in ipairs(game.Players:GetPlayers()) do
+			if player ~= game.Players.LocalPlayer then
+				if enabled then
+					-- Create ESP for the player
+					local box = Instance.new("BoxHandleAdornment")
+					box.Size = player.Character.HumanoidRootPart.Size * Vector3.new(1, 1.5, 1)
+					box.Color3 = Color3.fromRGB(0, 255, 255) -- Green
+					box.Transparency = 0.5
+					box.ZIndex = math.huge
+					box.AlwaysOnTop = true
+					box.Adornee = player.Character.HumanoidRootPart
+					box.Parent = player.Character.HumanoidRootPart
+				else
+					-- Remove the player's ESP
+					for _, adornment in ipairs(player.Character.HumanoidRootPart:GetChildren()) do
+						if adornment:IsA("BoxHandleAdornment") then
+							adornment:Destroy()
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	-- Connect the toggleESP function to the button's click event
+	script.Parent.MouseButton1Click:Connect(toggleESP)
+	
+end;
+task.spawn(C_69);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms.LocalScript
+local function C_77()
+local script = G2L["77"];
+	script.Parent.MouseButton1Click:Connect(function()
+		if script.Parent.Border.Check.BackgroundColor3 == Color3.fromRGB(170,0,0) then
+			script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(0,170,0)
+			script.Parent.Parent.Parent.Parent.FastAnimations.Text = "true"
+		else
+			script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(170,0,0)
+			script.Parent.Parent.Parent.Parent.FastAnimations.Text = "false"
+		end
+	end)
+end;
+task.spawn(C_77);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.MouseFade.LocalScript
+local function C_7e()
+local script = G2L["7e"];
+	script.Parent.MouseButton1Click:Connect(function()
+		if script.Parent.Border.Check.BackgroundColor3 == Color3.fromRGB(170,0,0) then
+			script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(0,170,0)
+			script.Parent.Parent.Parent.Parent.MouseFade.Text = "true"
+		else
+			script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(170,0,0)
+			script.Parent.Parent.Parent.Parent.MouseFade.Text = "false"
+		end
+	end)
+end;
+task.spawn(C_7e);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Close.CloseFramework
+local function C_83()
+local script = G2L["83"];
+	local MainUI = script.Parent.Parent.Parent.Parent.MainUi
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		wait(0.1)
+		MainUI:TweenSize(
+			UDim2.new(0,400,0,50),
+			"In",
+			"Linear",
+			0.25,
+			false
+		)
+		wait(0.1)
+		for i = 0, 10 do
+			wait()
+			MainUI.Executor.TextTransparency += 0.1
+			MainUI.MainFrameUI.Close.TextTransparency += 0.1
+			MainUI.MainFrameUI.Minimize.TextTransparency += 0.1
+		end
+		wait(0.4)
+		for i = 0, 10 do
+			wait()
+			MainUI.MainFrameUI.Transparency += 0.1
+			MainUI.MainFrameUI.BackgroundTransparency += 0.1
+			MainUI.MainFrameUI.BG.ImageTransparency += 0.1
+			MainUI.MainFrameUI.BG.BackgroundTransparency += 0.1
+			MainUI.Transparency += 0.1
+			MainUI.BackgroundTransparency += 0.1
+			MainUI.ImageLabel.ImageTransparency += 0.1
+			MainUI.ImageLabel.BackgroundTransparency += 0.1
+			MainUI.Transparency += 1
+			MainUI.BackgroundTransparency = 1
+		end
+		wait(0.25)
+		script.Parent.Parent.Parent.Parent.MainUi.Logo:TweenPosition(
+			UDim2.new(0,175,0,25),
+			"Out",
+			"Back",
+			0.25,
+			false
+		)
+		wait(1)
+		for i = 0, 20 do
+			wait()
+			MainUI.Logo.LogoImage.ImageTransparency += 0.05
+			MainUI.Logo.Clip.TextFrame.TopText.TextTransparency += 0.05
+			MainUI.Logo.Clip.TextFrame.BottomText.TextTransparency += 0.05
+		end
+		MainUI.Parent.Parent:Destroy()
+	end)
+end;
+task.spawn(C_83);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Minimize.MinimizeFramework
+local function C_85()
+local script = G2L["85"];
+	local MainUI = script.Parent.Parent.Parent.Parent.MainUi
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if MainUI.Size == UDim2.new(0,400,0,300) then
+			if script.Parent.Parent.TabData.FastAnimations.Text == "true" then
+				MainUI:TweenSize(
+					UDim2.new(0,400,0,50),
+					"Out",
+					"Back",
+					0,
+					true
+				)
+			else
+				MainUI:TweenSize(
+					UDim2.new(0,400,0,50),
+					"Out",
+					"Back",
+					0.25,
+					true
+				)
+			end
+		else
+			if script.Parent.Parent.TabData.FastAnimations.Text == "true" then
+				MainUI:TweenSize(
+					UDim2.new(0,400,0,300),
+					"Out",
+					"Back",
+					0,
+					true
+				)
+			else
+				MainUI:TweenSize(
+					UDim2.new(0,400,0,300),
+					"Out",
+					"Back",
+					0.25,
+					true
+				)
+			end
+		end
+	end)
+end;
+task.spawn(C_85);
+-- StarterGui.ProjectEvon.DragNode.MainUi.MouseEnterExitFadeManager
+local function C_86()
+local script = G2L["86"];
+	while wait() do
+		if script.Parent.MainFrameUI.TabData.MouseFade.Text == "true" then
+			local uiElement = script.Parent
+	
+			local startOpacity = 1
+			local endOpacity = 0.5
+	
+			local isMouseTouching = false
+			local currentOpacity = startOpacity
+	
+			local function onMouseEnter()
+				isMouseTouching = true
+			end
+	
+			local function onMouseLeave()
+				isMouseTouching = false
+			end
+	
+			local function updateTransparency()
+				if script.Parent.MainFrameUI.TabData.MouseFade.Text == "true" then
+					local targetOpacity = isMouseTouching and startOpacity or endOpacity
+		
+					currentOpacity = currentOpacity + (targetOpacity - currentOpacity) * 0.1
+		
+					uiElement.BackgroundTransparency = 1
+					uiElement.TopVerify.TextTransparency = 1
+					uiElement.BottomVerify.TextTransparency = 1
+					uiElement.MainFrameUI.BackgroundTransparency = (1 - currentOpacity)
+					uiElement.MainFrameUI.CopyRightFrame.BackgroundTransparency = (1 - currentOpacity)
+					uiElement.MainFrameUI.BG.ImageTransparency = (1 - currentOpacity)
+					uiElement.ImageLabel.ImageTransparency = 1
+				end
+			end
+	
+			uiElement.MouseEnter:Connect(onMouseEnter)
+			uiElement.MouseLeave:Connect(onMouseLeave)
+	
+			game:GetService("RunService").RenderStepped:Connect(updateTransparency)
+		else
+			
+		end
+	end
+end;
+task.spawn(C_86);
 
 return G2L["1"], require;
