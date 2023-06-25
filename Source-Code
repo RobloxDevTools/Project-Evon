@@ -2055,7 +2055,18 @@ task.spawn(C_67);
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Other.Tab.SuperAutoclicker.LocalScript
 local function C_71()
 local script = G2L["71"];
-	local button = script.Parent  -- Replace "script.Parent" with the actual reference to your button
+	local gameID = game.PlaceId
+	
+	if gameID == 13230182363 then
+		script.Parent.Visible = true
+	else
+		script.Parent:Destroy()
+	end
+	
+	
+	
+	
+	local button = script.Parent
 	
 	local isScriptRunning = false
 	
@@ -2079,7 +2090,6 @@ local script = G2L["71"];
 		end
 		wait()
 	end
-	
 end;
 task.spawn(C_71);
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms.LocalScript
