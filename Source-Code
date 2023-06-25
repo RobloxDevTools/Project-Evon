@@ -421,7 +421,6 @@ G2L["34"]["BorderSizePixel"] = 0;
 G2L["34"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
 G2L["34"]["Size"] = UDim2.new(0, 400, 0, 300);
 G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["34"]["Visible"] = false;
 G2L["34"]["Name"] = [[MainFrameUI]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.BG
@@ -1172,11 +1171,10 @@ G2L["86"]["Name"] = [[CloseFramework]];
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.Minimize
 G2L["87"] = Instance.new("TextButton", G2L["34"]);
 G2L["87"]["TextWrapped"] = true;
-G2L["87"]["ZIndex"] = 6;
+G2L["87"]["ZIndex"] = 1000000000;
 G2L["87"]["BorderSizePixel"] = 0;
-G2L["87"]["TextScaled"] = true;
 G2L["87"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["87"]["TextSize"] = 14;
+G2L["87"]["TextSize"] = 60;
 G2L["87"]["FontFace"] = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["87"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["87"]["Size"] = UDim2.new(0, 50, 0, 50);
@@ -1898,34 +1896,27 @@ task.spawn(C_5b);
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.LocalPlayer.Tab.Noclip.LocalScript
 local function C_61()
 local script = G2L["61"];
-	-- Variable to track if noclip is enabled or not
 	local noclipEnabled = false
 	
-	-- Table to store the initial anchored state of each part
 	local initialAnchoredStates = {}
 	
-	-- Function to toggle noclip for a specific character
 	local function toggleNoclip(character)
 		if character then
 			for _, part in ipairs(character:GetDescendants()) do
 				if part:IsA("BasePart") then
-					-- Noclip for the local player's character
 					if part:IsDescendantOf(game.Players.LocalPlayer.Character) then
 						part.CanCollide = not noclipEnabled
 	
-						-- Store the initial anchored state
 						if noclipEnabled then
 							initialAnchoredStates[part] = part.Anchored
 							part.Anchored = false
 						else
-							-- Restore the initial anchored state
 							local initialAnchored = initialAnchoredStates[part]
 							if initialAnchored ~= nil then
 								part.Anchored = initialAnchored
 							end
 						end
 					else
-						-- Noclip for other players' characters
 						part.CanCollide = false
 					end
 				end
@@ -1933,14 +1924,11 @@ local script = G2L["61"];
 		end
 	end
 	
-	-- Function to handle character added event
 	local function onCharacterAdded(character)
 		toggleNoclip(character)
 	end
 	
-	-- Function to handle character removing event
 	local function onCharacterRemoving(character)
-		-- Clear the initial anchored states for the character's parts
 		for part, _ in pairs(initialAnchoredStates) do
 			if part:IsDescendantOf(character) then
 				initialAnchoredStates[part] = nil
@@ -1948,28 +1936,23 @@ local script = G2L["61"];
 		end
 	end
 	
-	-- Function to toggle noclip for all players
 	local function toggleNoclipForAllPlayers()
 		noclipEnabled = not noclipEnabled
 		print("Noclip " .. (noclipEnabled and "enabled" or "disabled"))
 	
-		-- Toggle noclip for the local player's character
 		toggleNoclip(game.Players.LocalPlayer.Character)
 	
-		-- Toggle noclip for other players' characters
 		for _, player in ipairs(game.Players:GetPlayers()) do
 			toggleNoclip(player.Character)
 		end
 	end
 	
-	-- Function to handle GUI button click event
 	local guiButton = script.Parent
 	local checkButton = guiButton.Border.Check
 	
 	local function onButtonClick()
 		toggleNoclipForAllPlayers()
 	
-		-- Toggle the check button appearance
 		if noclipEnabled then
 			local walkspeed = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").WalkSpeed
 			local originalws = walkspeed
@@ -1981,10 +1964,8 @@ local script = G2L["61"];
 		end
 	end
 	
-	-- Connect GUI button click event to toggle noclip
 	guiButton.MouseButton1Click:Connect(onButtonClick)
 	
-	-- Connect character added and removing events for all players
 	game.Players.PlayerAdded:Connect(function(player)
 		player.CharacterAdded:Connect(function(character)
 			onCharacterAdded(character)
@@ -1994,13 +1975,11 @@ local script = G2L["61"];
 		end)
 	end)
 	
-	-- Check if the local player already has a character (in case the script is inserted after the player has spawned)
 	local localPlayer = game.Players.LocalPlayer
 	if localPlayer.Character then
 		onCharacterAdded(localPlayer.Character)
 	end
 	
-	-- Toggle noclip initially based on the starting state of the GUI button
 	toggleNoclipForAllPlayers()
 	
 end;
@@ -2084,7 +2063,7 @@ local script = G2L["71"];
 	
 	while true do
 		if isScriptRunning then
-			for i = 0, 10 do
+			for i = 0, 100 do
 				game:GetService("ReplicatedStorage"):WaitForChild("events-shared/network@GlobalEvents"):WaitForChild("placeBlock"):FireServer()
 			end
 		end
@@ -2198,6 +2177,9 @@ local script = G2L["88"];
 					true
 				)
 			end
+			script.Parent.TextSize = 50
+			script.Parent.FontFace = "Balthazar"
+			script.Parent.Text = "+"
 		else
 			if script.Parent.Parent.TabData.FastAnimations.Text == "true" then
 				MainUI:TweenSize(
@@ -2215,6 +2197,9 @@ local script = G2L["88"];
 					0.25,
 					true
 				)
+				script.Parent.TextSize = 60
+				script.Parent.FontFace = "Nunito"
+				script.Parent.Text = "-"
 			end
 		end
 	end)
@@ -2281,7 +2266,7 @@ local script = G2L["8b"];
 		end
 	end
 	
-	script.Parent.Text = (isExecutor and executorType or nil)
+	script.Parent.Text = (isExecutor and executorType or "None")
 end;
 task.spawn(C_8b);
 -- StarterGui.ProjectEvon.DragNode.MainUi.Player.PFPManager
