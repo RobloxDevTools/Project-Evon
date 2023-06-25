@@ -2230,7 +2230,7 @@ local script = G2L["89"];
 			local startOpacity = 1
 			local endOpacity = 0.5
 	
-			local isMouseTouching = false
+			local isMouseTouching = true
 			local currentOpacity = startOpacity
 	
 			local function onMouseEnter()
