@@ -421,6 +421,7 @@ G2L["34"]["BorderSizePixel"] = 0;
 G2L["34"]["BackgroundColor3"] = Color3.fromRGB(41, 43, 46);
 G2L["34"]["Size"] = UDim2.new(0, 400, 0, 300);
 G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["Visible"] = false;
 G2L["34"]["Name"] = [[MainFrameUI]];
 
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.BG
@@ -2036,38 +2037,62 @@ local function C_71()
 local script = G2L["71"];
 	local gameID = game.PlaceId
 	
-	if gameID == 13230182363 then
+	if gameID == 13230182363 or gameID == 11713882653 then
 		script.Parent.Visible = true
+		if gameID == 11713882653 then
+			money()
+		elseif gameID == 13230182363 then
+			cookie()
+		end
 	else
 		script.Parent:Destroy()
 	end
 	
 	
-	
-	
-	local button = script.Parent
-	
-	local isScriptRunning = false
-	
-	local function toggleScript()
-		isScriptRunning = not isScriptRunning
-		button.Text = isScriptRunning and "Super Autoclicker: ON" or "Super Autoclicker: OFF"
-		if isScriptRunning then
-			script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(0,170,0)
-		else
-			script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(170,0,0)
+	function money()
+		local button = script.Parent
+		local isScriptRunning = false
+		local function toggleScript()
+			isScriptRunning = not isScriptRunning
+			button.Text = isScriptRunning and "Super Autoclicker: ON" or "Super Autoclicker: OFF"
+			if isScriptRunning then
+				script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(0,170,0)
+			else
+				script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(170,0,0)
+			end
+		end
+		button.MouseButton1Click:Connect(toggleScript)
+		while true do
+			if isScriptRunning then
+				for i = 0, 100 do
+					game:GetService("ReplicatedStorage"):WaitForChild("events-shared/network@GlobalEvents"):WaitForChild("placeBlock"):FireServer()
+				end
+			end
+			wait()
 		end
 	end
 	
-	button.MouseButton1Click:Connect(toggleScript)
-	
-	while true do
-		if isScriptRunning then
-			for i = 0, 100 do
-				game:GetService("ReplicatedStorage"):WaitForChild("events-shared/network@GlobalEvents"):WaitForChild("placeBlock"):FireServer()
+	function cookie()
+		local button = script.Parent
+		local isScriptRunning = false
+		local function toggleScript()
+			isScriptRunning = not isScriptRunning
+			button.Text = isScriptRunning and "Super Autoclicker: ON" or "Super Autoclicker: OFF"
+			if isScriptRunning then
+				script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(0,170,0)
+			else
+				script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(170,0,0)
 			end
 		end
-		wait()
+		button.MouseButton1Click:Connect(toggleScript)
+		while true do
+			if isScriptRunning then
+				for i = 0, 10 do
+					game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Cookie"):FireServer()
+				end
+			end
+			wait()
+		end
 	end
 end;
 task.spawn(C_71);
