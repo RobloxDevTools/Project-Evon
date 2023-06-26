@@ -2035,56 +2035,43 @@ task.spawn(C_67);
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Other.Tab.SuperAutoclicker.LocalScript
 local function C_71()
 local script = G2L["71"];
+	local button = script.Parent
 	local gameID = game.PlaceId
+	local isScriptRunning = false
 	
-	if gameID == 13230182363 or gameID == 11713882653 then
-		script.Parent.Visible = true
-		if gameID == 11713882653 then
-			local button = script.Parent
-			local isScriptRunning = false
-			local function toggleScript()
-				isScriptRunning = not isScriptRunning
-				button.Text = isScriptRunning and "Super Autoclicker: ON" or "Super Autoclicker: OFF"
-				if isScriptRunning then
-					script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(0,170,0)
-				else
-					script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(170,0,0)
-				end
-			end
-			while true do
-				if isScriptRunning then
-					for i = 0, 100 do
-						game:GetService("ReplicatedStorage"):WaitForChild("events-shared/network@GlobalEvents"):WaitForChild("placeBlock"):FireServer()
-					end
-				end
-				wait()
-			end
-			script.Parent.MouseButton1Click:Connect(toggleScript)
-		elseif gameID == 13230182363 then
-			local button = script.Parent
-			local isScriptRunning2 = false
-			local function toggleScript2()
-				isScriptRunning2 = not isScriptRunning2
-				button.Text = isScriptRunning2 and "Super Autoclicker: ON" or "Super Autoclicker: OFF"
-				if isScriptRunning2 then
-					script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(0,170,0)
-				else
-					script.Parent.Border.Check.BackgroundColor3 = Color3.fromRGB(170,0,0)
-				end
-			end
-			while true do
-				if isScriptRunning2 then
-					for i = 0, 10 do
-						game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Cookie"):FireServer()
-					end
-				end
-				wait()
-			end
-			script.Parent.MouseButton1Click:Connect(toggleScript2)
-		end
-	else
+	if not(gameID == 13230182363 or gameID == 11713882653) then
 		script.Parent:Destroy()
 	end
+	
+	local function toggleScript()
+		isScriptRunning = not isScriptRunning
+		button.Text = isScriptRunning and "Super Autoclicker: ON" or "Super Autoclicker: OFF"
+		button.Border.Check.BackgroundColor3 = isScriptRunning and Color3.fromRGB(0, 170, 0) or Color3.fromRGB(170, 0, 0)
+	end
+	
+	button.MouseButton1Click:Connect(toggleScript)
+	
+	local function autoclick()
+		if isScriptRunning then
+			if gameID == 13230182363 then
+				game:GetService("ReplicatedStorage"):WaitForChild("events-shared/network@GlobalEvents"):WaitForChild("placeBlock"):FireServer()
+			elseif gameID == 11713882653 then
+				game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Cookie"):FireServer()
+			end
+		end
+		wait()
+	end
+	
+	button.AncestryChanged:Connect(function()
+		if not button:IsDescendantOf(game) then
+			button:Destroy()
+		end
+	end)
+	
+	while true do
+		autoclick()
+	end
+	
 end;
 task.spawn(C_71);
 -- StarterGui.ProjectEvon.DragNode.MainUi.MainFrameUI.TabData.Settings.Tab.FastAnms.LocalScript
